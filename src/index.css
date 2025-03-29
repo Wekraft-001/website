@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+@font-face {
+  font-family: nexaround;
+  src: url("./assets/fonts/nexaround-glow.ttf");
+}
+
+@font-face {
+  font-family: Cocon;
+  src: url("./assets/fonts/CoconRegularFont.otf");
+}
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  body {
+    /* font-family: " Cocon", sans-serif; */
+    overflow-x: hidden;
+  }
+}
+
+@theme {
+  /* FONT FAMILY */
+  --font-cocon: "Cocon", sans-serif;
+
+  --font-nexa:"nexaround", sans-serif;
+
+  --font-nunito: "Nunito", sans-serif;
+
+  /* BREAK POINTS */
+  --breakpoint-3xl: 120rem;
+
+  /* COLORS */
+  --color-primary-100: #2a6b8b;
+
+  --color-primary-200:#fab548;
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  /* ... */
+}
+
+/* 
+      
+        
