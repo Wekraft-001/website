@@ -73,7 +73,7 @@ const Home = () => {
           </p>
           <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
             Our aim is to ensure that every child is empowered to thrive
-            <br /> in their feature endeavours
+            <br /> in their future endeavours
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfvNPv7b8PHXlDfL1yX4sKqAP71XAEGzssEwOSv7esMAycscA/viewform"
@@ -260,7 +260,7 @@ const Home = () => {
             <div className="absolute top-1/2 right-0 transform translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon3} alt="Partners" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Partnered with 8+ schools, women's groups, creating employment
+                Partnered with 8+ schools, women's groups in creating employment
                 opportunities.
               </p>
             </div>
@@ -268,7 +268,7 @@ const Home = () => {
             <div className="absolute top-1/2 left-0 transform -translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon2} alt="Expansion" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Expanding operations to Kenya, scaling our impact beyond
+                Expanding operations to Kenya, Tanzania in scaling our impact beyond
                 borders.
               </p>
             </div>
@@ -276,14 +276,14 @@ const Home = () => {
             <div className="absolute -bottom-4 left-full right-10 transform -translate-x-1/2 translate-y-full w-50 p-3 flex flex-col items-center">
               <img src={Icon5} alt="Impact" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Impacted over 500 children.
+                Impacted over 500 children in the last 2 years.
               </p>
             </div>{" "}
             {/* Bottom stat left */}
             <div className="absolute -bottom-0 left-10 right-1/2 transform translate-y-full -translate-x-full w-50 p-3 flex flex-col items-center">
               <img src={Icon4} alt="Engagement" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                5 hours of engagement time per week
+                5 hours of engagement time per week for every child.
               </p>
             </div>
           </div>

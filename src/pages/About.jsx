@@ -83,7 +83,7 @@ const About = () => {
           </p>
           <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
             Our aim is to ensure that every child is empowered to thrive
-            <br /> in their feature endeavours
+            <br /> in their future endeavours
           </p>
           <a href="#more">
             <button
