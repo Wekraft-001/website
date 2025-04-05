@@ -22,6 +22,7 @@ import Agnes from "../assets/teams/agnes.svg";
 import Juliet from "../assets/teams/juliet.svg";
 import John from "../assets/teams/john.svg";
 import Ben from "../assets/teams/ben.svg";
+import Florence from "../assets/teams/florence.svg";
 import Blue_Star from "../assets/shooting-star_blue.svg";
 
 const About = () => {
@@ -53,7 +54,7 @@ const About = () => {
     },
 
     {
-      image: Staphord,
+      image: Florence,
       name: "Florence Wairimu",
       title: "Curriculum Development Advisor",
     },
@@ -104,11 +105,12 @@ const About = () => {
       >
         <div className="flex flex-col items-center gap-2 my-5 md:my-10">
           {/* Mission Card */}
-          <div className="relative p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
+          <div className="relative p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
             <h3 className="text-xl font-semibold mb-2">Mission</h3>
-            <p className="text-xs md:text-sm">
-              Our aim is to ensure that every child is empowered to thrive in
-              their future endeavors.
+            <p className="text-xs md:text-sm leading-6">
+              To spark confidence, creativity, and curiosity in every child by
+              giving them the tools, exposure, and inspiration to dream boldly
+              and learn with purpose.
             </p>
           </div>
 
@@ -118,12 +120,12 @@ const About = () => {
           </div>
 
           {/* Vision Card */}
-          <div className="relative bg-white p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65 rotate-">
+          <div className="relative bg-white p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
             <h3 className="text-xl font-semibold mb-2">Vision</h3>
-            <p className="text-xs md:text-sm">
-              The vision is to equip every child, irrespective of their
-              background, with the skills necessary for academic success and
-              lifelong learning.
+            <p className="text-xs md:text-sm leading-6">
+              A future where every child grows up feeling seen, supported, and
+              excited about who they are becoming and parents are right there
+              beside them on the journey.
             </p>
           </div>
         </div>

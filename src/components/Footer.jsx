@@ -16,7 +16,7 @@ const Footer = () => {
     <>
       <div className="hidden w-full h-full md:flex flex-col items-center justify-center p-4 md:px-10 bg-[#3C91BA]/10">
         {/* 1 */}
-        <div className="w-full flex items-center justify-between gap-4 my-10">
+        <div className="w-full flex items-stretch justify-between gap-4 my-10">
           {/* a */}
           <div className="flex flex-col items-center">
             <img src={Logo} alt="Wekraft Logo" className="w-[168px]" />

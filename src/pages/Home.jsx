@@ -101,11 +101,12 @@ const Home = () => {
           <div className="relative p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
             <h3 className="text-xl font-semibold mb-2">Mission</h3>
             <p className="text-xs md:text-sm">
-              Our aim is to ensure that every child is empowered to thrive in
-              their future endeavors.
+              To spark confidence, creativity, and curiosity in every child by
+              giving them the tools, exposure, and inspiration to dream boldly
+              and learn with purpose.
             </p>
             {/* Decorative Bubble */}
-            <div className="absolute top-[150px] md:top-[165px] -left-10 md:-left-20 bg-[#3C91BA] rounded-full w-24 h-24"></div>
+            <div className="absolute top-[160px] md:top-[210px] -left-10 md:-left-20 bg-[#3C91BA] rounded-full w-24 h-24"></div>
             {/* <div className="absolute -bottom-6 -left-2 bg-blue-400 rounded-full w-8 h-8"></div> */}
           </div>
 
@@ -119,12 +120,12 @@ const Home = () => {
           <div className="relative bg-white p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65 rotate-">
             <h3 className="text-xl font-semibold mb-2">Vision</h3>
             <p className="text-xs md:text-sm">
-              The vision is to equip every child, irrespective of their
-              background, with the skills necessary for academic success and
-              lifelong learning.
+              A future where every child grows up feeling seen, supported, and
+              excited about who they are becoming and parents are right there
+              beside them on the journey.
             </p>
             {/* Decorative Bubble */}
-            <div className="absolute -top-[100px] md:-top-[120px] -right-10 md:-right-20 bg-yellow-300 rounded-full w-24 h-24"></div>
+            <div className="absolute -top-[110px] md:-top-[100px] -right-10 md:-right-20 bg-yellow-300 rounded-full w-24 h-24"></div>
             {/* <div className="absolute -top-6 -right-2 bg-yellow-400 rounded-full w-8 h-8"></div> */}
           </div>
         </div>
@@ -325,11 +326,11 @@ const Home = () => {
             <img src={UniqueApproach} />
           </div>
           <div className="flex flex-col items-center justify-center md:items-start gap-4">
-            <div className="text-white font-nexa text-xl md:text-4xl">
+            <div className="text-white font-nexa text-xl md:text-4xl text-center md:text-left">
               Our Unique Educational <br />
               Approach
             </div>
-            <p className="font-medium font-cocon text-[#FFFFFF]/75">
+            <p className="font-medium font-cocon text-[#FFFFFF]/75 text-center md:text-left">
               Central to WeKraft’s educational approach is nurturing, measuring,
               and tracking seven types of intelligence in children
             </p>

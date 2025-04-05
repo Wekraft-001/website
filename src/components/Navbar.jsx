@@ -51,21 +51,21 @@ const Navbar = () => {
           About Us
         </NavLink>
         <NavLink
-          to="/services"
+          to="/our-toolkit"
           style={activeStyle}
           className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
         >
           Toolkit
         </NavLink>
         <NavLink
-          to="/blogs"
+          to="/skillseed"
           style={activeStyle}
           className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
         >
           Skillseed
         </NavLink>
         <NavLink
-          to="/events"
+          to="/contact-us"
           style={activeStyle}
           className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
         >
