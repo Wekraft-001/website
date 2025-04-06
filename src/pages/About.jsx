@@ -78,7 +78,10 @@ const About = () => {
         </video>
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#000000]/50 z-[2]"></div>
         <div className="w-full flex flex-col items-center justify-center relative z-[3] p-4 pt-20 md:pt-0 md:my-4">
-          <p className="text-3xl md:text-6xl font-primarySemibold text-gray-200 md:w-[900px] mb-2 text-center uppercase font-nexa">
+          <p
+            className="text-3xl md:text-6xl font-primarySemibold text-gray-200 md:w-[900px] mb-2 text-center uppercase font-nexa"
+            style={{ textShadow: "2px 2px 2px #FAB548" }}
+          >
             where little minds grow <br /> big dreams
           </p>
           <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">

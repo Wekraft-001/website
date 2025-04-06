@@ -17,7 +17,10 @@ const Toolkit = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-white font-primaryBold text-2xl md:text-5xl md:leading-[70px] text-center md:text-left uppercase font-nexa">
+          <h1
+            className="text-white font-primaryBold text-2xl md:text-5xl md:leading-[70px] text-center md:text-left uppercase font-nexa"
+            style={{ textShadow: "2px 2px 2px #FAB548" }}
+          >
             Our Toolkit makes learning unforgettable
           </h1>
           <a

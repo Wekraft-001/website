@@ -68,7 +68,10 @@ const Home = () => {
         </video>
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#000000]/50 z-[2]"></div>
         <div className="w-full flex flex-col items-center justify-center relative z-[3] p-4 pt-20 md:pt-0 md:my-4">
-          <p className="text-3xl md:text-6xl font-primarySemibold text-gray-200 md:w-[777px] mb-2 text-center uppercase font-nexa">
+          <p
+            className="text-3xl md:text-6xl font-primarySemibold text-gray-200 md:w-[777px] mb-2 text-center uppercase font-nexa"
+            style={{ textShadow: "2px 2px 2px #FAB548" }}
+          >
             we empower minds <br /> and inspire futures
           </p>
           <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
@@ -268,8 +271,8 @@ const Home = () => {
             <div className="absolute top-1/2 left-0 transform -translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon2} alt="Expansion" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Expanding operations to Kenya, Tanzania in scaling our impact beyond
-                borders.
+                Expanding operations to Kenya, Tanzania in scaling our impact
+                beyond borders.
               </p>
             </div>
             {/* Bottom stat right */}

@@ -88,7 +88,7 @@ const Contact = () => {
               <AiOutlineMail size={20} color="#1E1E1E" />
             </a>
             <span className="md:text-xl font-regular">
-              skillseedrw@gmail.com.com
+              skillseed@wekraft.co
             </span>
           </div>
           <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">

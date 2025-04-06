@@ -81,7 +81,7 @@ const Footer = () => {
               >
                 <AiOutlineMail size={20} color="#1E1E1E" />
               </a>
-              <span className="font-regular">skillseedrw@gmail.com.com</span>
+              <span className="font-regular">skillseed@wekraft.co</span>
             </div>
           </div>
         </div>
