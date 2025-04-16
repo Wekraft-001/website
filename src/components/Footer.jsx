@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/wekraft-logo.svg";
 import { FaLinkedin, FaFacebook } from "react-icons/fa";
-import {
-  FaPhone,
-  FaRegCopyright,
-  FaXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+import { FaPhone, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { IoLocationSharp } from "react-icons/io5";
 import { AiOutlineMail } from "react-icons/ai";
 
@@ -65,7 +60,7 @@ const Footer = () => {
               <span className=" font-regular">+250931089/+2508161453</span>
             </div>
             <a
-              href="https://www.linkedin.com/company/masterkraft-ltd/"
+              href="https://www.linkedin.com/company/wekraft-ltd/"
               target="_blank"
               className="flex items-center gap-2 cursor-pointer"
             >
@@ -75,10 +70,7 @@ const Footer = () => {
               <span className=" font-regular">Wekraft Ltd</span>
             </a>
             <div className="flex items-center gap-2">
-              <a
-                href="https://www.linkedin.com/company/aleph-biz-solutions-ltd/"
-                target="_blank"
-              >
+              <a href="#">
                 <AiOutlineMail size={20} color="#1E1E1E" />
               </a>
               <span className="font-regular">skillseed@wekraft.co</span>
@@ -140,10 +132,12 @@ const Footer = () => {
               <a href="#">
                 <FaPhone size={15} color="#1E1E1E" />
               </a>
-              <span className="text-xs font-regular">+250931089/+2508161453</span>
+              <span className="text-xs font-regular">
+                +250931089/+2508161453
+              </span>
             </div>
             <a
-              href="https://www.linkedin.com/company/masterkraft-ltd/"
+              href="https://www.linkedin.com/company/wekraft-ltd/"
               target="_blank"
               className="flex items-center gap-2 cursor-pointer"
             >
@@ -153,15 +147,14 @@ const Footer = () => {
               <span className="text-xs font-regular">Wekraft Ltd</span>
             </a>
             <div className="flex items-center gap-2">
-              <a
-                href="https://www.linkedin.com/company/aleph-biz-solutions-ltd/"
-                target="_blank"
-              >
+              <a href="#">
                 <AiOutlineMail size={15} color="#1E1E1E" />
               </a>
-              <span className="text-xs font-regular">skillseedrw@gmail.com.com</span>
+              <span className="text-xs font-regular">
+                skillseedrw@gmail.com.com
+              </span>
             </div>
-          </div> 
+          </div>
           <div></div>
         </div>
         <div className="w-full flex items-center gap-4 mt-5">
