@@ -15,6 +15,8 @@ import Icon4 from "../assets/time.svg";
 import Icon5 from "../assets/children.svg";
 import Arrow from "../assets/arrow.svg";
 import Star from "../assets/shooting-star.svg";
+import Star2 from "../assets/rising-star.svg";
+import Testimonials from "../components/Testimonial";
 import Jasiri from "../assets/partners/Jasiri-logo.svg";
 import Hindsight from "../assets/partners/hindsight-Ventures.svg";
 import Norsken from "../assets/partners/norsken-logo.svg";
@@ -379,6 +381,20 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* Testimonials */}
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 p-4 md:p-10 2xl:p-20 bg-[#FAB548]/5">
+        <div className="md:w-[30%]">
+          <div className="w-full flex md:flex-col-reverse items-center gap-5 md:gap-10">
+            <img src={Star2} className="w-[60px] md:w-[125px]" />
+            <div className="text-[#1E1E1E]/50 font-nexa text-2xl md:text-4xl md:leading-10">
+              See What Our Clients Are Saying
+            </div>
+          </div>
+        </div>
+
+        {/* <div>Testimonial Container</div> */}
+        <Testimonials />
       </div>
       {/* Partners */}
       <div

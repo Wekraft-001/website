@@ -11,6 +11,8 @@ import { BsPinFill } from "react-icons/bs";
 import { FcGraduationCap } from "react-icons/fc";
 import WhoWeAreBG from "../assets/whoWeAreBg.svg";
 import Gifted from "../assets/gifted.svg";
+import IconPerson from "../assets/price-icon-person.svg";
+import IconSchool from "../assets/price-icon-school.svg";
 
 const Skillseed = () => {
   const journeys = [
@@ -91,7 +93,8 @@ const Skillseed = () => {
     },
     {
       id: 3,
-      message: "Specialized Topics: Opportunities to dive into complex and exciting fields like robotics, advanced coding, and more. Sparking creativity and innovation.",
+      message:
+        "Specialized Topics: Opportunities to dive into complex and exciting fields like robotics, advanced coding, and more. Sparking creativity and innovation.",
     },
     {
       id: 4,
@@ -395,55 +398,34 @@ const Skillseed = () => {
         <div className=" text-[#1E1E1E]/50 font-nexa text-xl md:text-5xl">
           Our Pricing
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 py-5 md:py-10">
-          <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-[#3C91BA]">
-            <FcGraduationCap
-              size={50}
-              color="white"
-              className="hidden md:block text-white"
-            />
-            <FcGraduationCap
-              size={30}
-              color="white"
-              className="block md:hidden text-white"
-            />
-            <p className="text-center font-nexa text-white text-xl md:text-4xl">
-              Weekly
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-5 md:gap-10 py-5 md:py-10">
+          <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-[#3C91BA] p-4">
+            <img src={IconPerson} className="w-10 md:w-20 h-10 md:h-20" />
+            <p className="text-center font-nexa text-white text-xl md:text-3xl">
+              Individual
             </p>
-            <p className="text-white font-cocon text-xl md:text-3xl">$23</p>
+            <p className="text-white font-cocon text-lg md:text-2xl">
+              $25/Monthly
+            </p>
           </div>
-          <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
-            <FcGraduationCap
-              size={50}
-              color="#3C91BA"
-              className="hidden md:block"
-            />
-            <FcGraduationCap
-              size={30}
-              color="#3C91BA"
-              className="block md:hidden"
-            />
-            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-4xl">
-              Monthly
+          <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-white border-2 border-dashed border-[#3C91BA] p-4">
+            <img src={IconSchool} className="w-10 md:w-20 h-10 md:h-20" />
+            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-3xl">
+              School Package
+              <br /> Tier 1
             </div>
-            <p className="text-[#3C91BA] font-cocon text-xl md:text-3xl">$89</p>
+            <p className="text-[#3C91BA] font-cocon text-lg md:text-2xl">
+              $5/Child/Month
+            </p>
           </div>
-          <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-white border-2 border-dashed border-[#3C91BA] px-4">
-            <FcGraduationCap
-              size={50}
-              color="#FAB548"
-              className="hidden md:block"
-            />
-            <FcGraduationCap
-              size={30}
-              color="#FAB548"
-              className="block md:hidden"
-            />
-            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-4xl">
-              Specialized Tracks
+          <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-white border-2 border-dashed border-[#3C91BA] p-4">
+            <img src={IconSchool} className="w-10 md:w-20 h-10 md:h-20" />
+            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-3xl">
+              School Package
+              <br /> Tier 2
             </div>
-            <p className="text-[#3C91BA] font-cocon text-xl md:text-3xl">
-              Custom Pricing
+            <p className="text-[#3C91BA] font-cocon text-lg md:text-2xl">
+              $10/Child/Month
             </p>
           </div>
         </div>
