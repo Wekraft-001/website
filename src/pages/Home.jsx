@@ -173,16 +173,16 @@ const Home = () => {
       </div>
       {/* What We Offer */}
       <div
-        className="w-full h-full relative bg-cover flex flex-col items-center justify-center p-10"
+        className="w-full h-full relative bg-cover bg-repeat flex flex-col items-center justify-center px-4 pb-10 md:p-10"
         style={{
           backgroundImage: `url(${WhatWeOffer})`,
         }}
       >
-        <div className="my-4 text-white font-nexa text-xl md:text-5xl">
+        <div className="my-4 text-white font-nexa text-2xl md:text-5xl">
           What We Offer
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 py-5 md:py-10">
-          <div className="w-[213px] md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-[#FAB548] border-2 border-dashed border-white">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 py-5 md:py-10">
+          <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-[#FAB548] border-2 border-dashed border-white">
             <FaLightbulb
               size={50}
               color="#E18C03"
@@ -199,7 +199,7 @@ const Home = () => {
               Learning
             </div>
           </div>
-          <div className="w-[213px] md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
+          <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
             <FaLightbulb
               size={50}
               color="#3C91BA"
@@ -215,7 +215,7 @@ const Home = () => {
               kit
             </div>
           </div>
-          <div className="w-[213px] md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
+          <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
             <FaLightbulb
               size={50}
               color="#FAB548"
@@ -233,7 +233,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* Wekraft */}
+      {/* How We Do It */}
       <div
         className="w-full h-full flex flex-col items-center justify-center p-4 md:p-10 bg-cover"
         style={{ backgroundImage: `url(${WekraftBg})` }}
@@ -331,7 +331,7 @@ const Home = () => {
             <img src={UniqueApproach} />
           </div>
           <div className="flex flex-col items-center justify-center md:items-start gap-4">
-            <div className="text-white font-nexa text-xl md:text-4xl text-center md:text-left">
+            <div className="text-white font-nexa text-2xl md:text-5xl text-center md:text-left">
               Our Unique Educational <br />
               Approach
             </div>
@@ -340,43 +340,43 @@ const Home = () => {
               and tracking seven types of intelligence in children
             </p>
             <div className="w-full grid items-center justify-center gap-4 md:gap-20 p-4">
-              <div className="grid grid-cols-4 gap-4 md:gap-10">
-                <div className="w-full md:w-[150px] h-[70px]"></div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FAB548] shadow-[#FAB548] text-white flex items-center justify-center text-center font-cocon text-[11px] md:text-sm p-1">
+              <div className="grid grid-cols-4 gap-4 md:gap-20">
+                <div className="w-full md:w-[140px] h-[70px]"></div>
+                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FAB548] shadow-[#FAB548] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm p-1">
                   logical-
                   <br className="hidden md:block" /> mathematics
                 </div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FFFCFB] shadow-[#FAB548]/25 text-[#3C91BA] flex items-center justify-center text-center font-cocon text-xs md:text-sm">
+                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FFFCFB] shadow-[#FAB548]/25 text-[#3C91BA] flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
                   Linguistic
                 </div>
-                <div className="w-full md:w-[150px] h-[70px]"></div>
+                <div className="w-full md:w-[140px] h-[70px]"></div>
               </div>
               <div className="grid grid-cols-3 gap-4">
-                <div className="md:w-[150px] h-[70px] rounded-[60px] shadow-2xl bg-[#3C91BA] shadow-[#FAB548]/25 text-white flex items-center justify-center text-center font-cocon">
+                <div className="w-full md:w-[150px] h-[70px] rounded-[60px] shadow-2xl bg-[#3C91BA] shadow-[#FAB548]/25 text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
                   Spatial
                 </div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[60px] shadow-2xl bg-[#FFFCFB] shadow-[#FAB548]/25 text-[#3C91BA] flex items-center justify-center text-center font-cocon text-xs md:text-sm">
+                <div className="w-full md:w-[150px] h-[70px] rounded-[60px] shadow-2xl bg-[#FFFCFB] shadow-[#FAB548]/25 text-[#3C91BA] flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
                   Naturalistic
                 </div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#F7CA57] shadow-[#F7CA57] text-white flex items-center justify-center text-center font-cocon text-xs md:text-sm">
+                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#F7CA57] shadow-[#F7CA57] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
                   Inter-
                   <br />
                   personal
                 </div>
               </div>
-              <div className="grid grid-cols-4 gap-4 md:gap-10">
-                <div className="w-full md:w-[150px] h-[70px]"></div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#C85415] shadow-[#C85415] text-white flex items-center justify-center text-center font-cocon text-xs md:text-sm">
+              <div className="grid grid-cols-4 gap-4 md:gap-20">
+                <div className="w-full md:w-[140px] h-[70px]"></div>
+                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#C85415] shadow-[#C85415] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
                   Intra-
                   <br />
                   personal
                 </div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[35px] md:rounded-[60px] shadow-2xl bg-[#5BC4F6] shadow-[#5BC4F6] text-white flex items-center justify-center text-center font-cocon text-xs md:text-sm">
+                <div className="w-full md:w-[140px] h-[70px] rounded-[35px] md:rounded-[60px] shadow-2xl bg-[#5BC4F6] shadow-[#5BC4F6] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
                   Bodily-
                   <br />
                   kinesthetic
                 </div>
-                <div className="w-full md:w-[150px] h-[70px]"></div>
+                <div className="w-full md:w-[140px] h-[70px]"></div>
               </div>
             </div>
           </div>

@@ -80,7 +80,7 @@ const Contact = () => {
               <IoLocationSharp size={20} color="#1E1E1E" />
             </a>
             <span className=" md:text-xl font-regular">
-              Norsken House 1 KN 78st, Kigali, RW
+              Norsken House, Kigali, RW
             </span>
           </div>
           <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
@@ -91,12 +91,12 @@ const Contact = () => {
               skillseed@wekraft.co
             </span>
           </div>
-          <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
+          <div className="flex items-center gap-2 font-bold text-[#1E1E1E]/60">
             <a href="#">
               <FaPhone size={20} color="#1E1E1E" />
             </a>
             <span className="md:text-xl font-regular">
-              +250931089/+2508161453
+              +250793177089 / +250787161453
             </span>
           </div>
         </div>

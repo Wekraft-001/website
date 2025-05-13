@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-20 md:h-[100px] fixed top-0 left-0 flex items-center justify-between gap-0 md:gap-10 mx-auto p-4 md:px-10 z-20 bg-white shadow-lg font-cocon">
+    <div className="w-full h-[70px] sm:h-[70px] md:h-20 lg:h-[70px] xl:h-[75px] 2xl:h-[100px] fixed top-0 left-0 flex items-center justify-between gap-0 md:gap-10 mx-auto p-4 md:px-10 z-20 bg-white shadow-lg font-cocon">
       <Link to="/">
         <img src={Logo} alt="Wekraft" className="w-20" />
       </Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
           <IoArrowForwardCircle className="mx-2" />
         </span>
       </a>
-      <nav className="text-[#1E1E1E]/[65%] font-primaryRegular hidden md:flex bg-[#3C91BA]/[5%] rounded-full p-4">
+      <nav className="text-[#1E1E1E]/[65%] font-primaryRegular hidden md:flex bg-[#3C91BA]/[5%] rounded-full md:p-2 2xl:p-4">
         <NavLink
           to="/"
           style={activeStyle}
@@ -75,7 +75,7 @@ const Navbar = () => {
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSfvNPv7b8PHXlDfL1yX4sKqAP71XAEGzssEwOSv7esMAycscA/viewform"
         target="_blank"
-        className="hidden w-[140px] h-[55px] rounded-full bg-[#FAB548] text-white font-primarySemibold md:flex items-center justify-center text-lg hover:bg-[#FAB548]/[30%] transition duration-200 uppercase"
+        className="hidden md:w-[130px] 2xl:w-[140px] md:h-10 2xl:h-[55px] rounded-full bg-[#FAB548] text-white font-primarySemibold md:flex items-center justify-center text-lg hover:bg-[#FAB548]/[30%] transition duration-200 uppercase"
       >
         Sign Up
         <span>
@@ -98,7 +98,7 @@ const Navbar = () => {
             : "fixed right-[-100%]"
         }
       >
-        <div className="grid grid-cols-1 gap-4 px-4 font-primarySemibold py-8">
+        <div className="grid grid-cols-1 gap-3 px-4 font-primarySemibold py-6">
           <NavLink
             to="/"
             style={activeStyle}

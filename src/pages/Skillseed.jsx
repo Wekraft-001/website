@@ -202,12 +202,12 @@ const Skillseed = () => {
           </div>
         </div>
         {/* Core Offering 2 */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 md:gap-10 2xl:justify-around 2xl:gap-10 my-5 md:my-10">
+        <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-4 md:gap-10 2xl:justify-around 2xl:gap-10 my-5 md:my-10">
           <div className="w-full flex flex-col items-center gap-5 md:gap-10 py-5 md:py-10 md:w-[60%]">
             {/* Top Center Card */}
             <div className="flex justify-center">
               <div className="flex flex-col items-center">
-                <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[400px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
+                <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[350px] 2xl:w-[500px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
                   <BsPinFill size={30} color="#FAB548" />
                   <p className="font-cocon text-[#3C91BA] text-center">
                     {exposure[0].message}
@@ -224,10 +224,10 @@ const Skillseed = () => {
             </div>
 
             {/* Bottom Row - Two Cards Side by Side */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
+            <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
               {exposure.slice(1).map((journey, index) => (
                 <div key={journey.id} className="flex flex-col items-center">
-                  <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[400px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
+                  <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[350px] 2xl:w-[500px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
                     <BsPinFill size={30} color="#FAB548" />
                     <p className="font-cocon text-[#3C91BA] text-center">
                       {journey.message}
@@ -247,9 +247,9 @@ const Skillseed = () => {
             </div>
           </div>
 
-          <div className=" md:w-[500px] 2xl:w-[700px] space-y-4 font-cocon py-6 md:py-0">
+          <div className=" md:w-[400px] 2xl:w-[700px] space-y-4 font-cocon py-6 md:py-0">
             <p className="text-[#3C91BA] text-2xl md:text-4xl text-center md:text-left">
-              Real Word Career Exposure
+              Real World Career Exposure
             </p>
             <img src={Core2} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
@@ -271,11 +271,11 @@ const Skillseed = () => {
               curious.
             </p>
           </div>
-          <div className="w-full flex flex-col items-center gap-5 md:gap-10 py-5 md:py-10 md:w-[60%]">
+          <div className="w-full flex flex-col items-center gap-5 md:gap-10 py-5 md:py-10">
             {/* Top Center Card */}
             <div className="flex justify-center">
               <div className="flex flex-col items-center">
-                <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[400px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
+                <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[350px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
                   <BsPinFill size={30} color="#FAB548" />
                   <p className="font-cocon text-[#3C91BA] text-center">
                     {engagement[0].message}
@@ -295,7 +295,7 @@ const Skillseed = () => {
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10">
               {engagement.slice(1).map((journey, index) => (
                 <div key={journey.id} className="flex flex-col items-center">
-                  <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[400px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
+                  <div className="bg-[#FFFCF8] border-[1.09px] border-dashed border-[#3C91BA] p-6 w-full md:w-[350px] rounded-lg shadow-md flex flex-col items-center justify-center gap-4">
                     <BsPinFill size={30} color="#FAB548" />
                     <p className="font-cocon text-[#3C91BA] text-center">
                       {journey.message}
@@ -398,7 +398,7 @@ const Skillseed = () => {
         <div className=" text-[#1E1E1E]/50 font-nexa text-xl md:text-5xl">
           Our Pricing
         </div>
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-5 md:gap-10 py-5 md:py-10">
+        <div className="w-full flex flex-col md:flex-row items-stretch justify-center gap-5 md:gap-10 py-5 md:py-10">
           <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-[#3C91BA] p-4">
             <img src={IconPerson} className="w-10 md:w-20 h-10 md:h-20" />
             <p className="text-center font-nexa text-white text-xl md:text-3xl">
