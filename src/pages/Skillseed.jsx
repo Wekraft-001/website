@@ -102,6 +102,11 @@ const Skillseed = () => {
         "Perfect for children who thrive on challenges and aim to expand their horizons!",
     },
   ];
+
+  const scrollToMore = () => {
+    const section = document.querySelector("#more");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       {/* Hero Section */}
@@ -122,22 +127,23 @@ const Skillseed = () => {
           >
             We believe every child carries a seed of greatness
           </h1>
-          <a
+          {/* <a
             href="#more"
             className="flex items-center justify-center md:justify-start"
+          > */}
+          <motion.button
+            onClick={scrollToMore}
+            className="w-[171px] h-[50px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
-            <motion.button
-              className="w-[171px] h-[50px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            >
-              See More
-              <span>
-                <IoArrowForwardCircle className="mx-2" />
-              </span>
-            </motion.button>
-          </a>
+            See More
+            <span>
+              <IoArrowForwardCircle className="mx-2" />
+            </span>
+          </motion.button>
+          {/* </a> */}
         </motion.div>
 
         {/* Image Content */}
@@ -150,7 +156,7 @@ const Skillseed = () => {
         </motion.div>
       </div>
       {/* Core Offerings */}
-      <div id="#more" className="w-full bg-[#FFFBF7] p-4 md:p-10 ">
+      <div id="more" className="w-full bg-[#FFFBF7] p-4 md:p-10 ">
         <div className="my-6 text-[#1E1E1E]/50 font-nexa text-xl md:text-5xl text-center">
           Our Core Offerings
         </div>

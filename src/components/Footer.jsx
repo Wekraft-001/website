@@ -38,11 +38,15 @@ const Footer = () => {
               >
                 <FaLinkedin size={20} color="#1E1E1E" />
               </a>
-              <FaXTwitter size={20} color="#1E1E1E" />
+              <a href="https://www.tiktok.com/@wekraft_limited" target="_blank">
+                <FaTiktok size={20} color="#1E1E1E" />
+              </a>
             </div>
             <div className="flex items-center space-x-4">
               <FaFacebook size={20} color="#1E1E1E" />
-              <FaInstagram size={20} color="#1E1E1E" />
+              <a href="https://www.instagram.com/wekraft_ltd/" target="_blank">
+                <FaInstagram size={20} color="#1E1E1E" />
+              </a>
             </div>
             <div></div>
             <div></div>
@@ -133,7 +137,9 @@ const Footer = () => {
               <a href="#">
                 <AiOutlineMail size={15} color="#1E1E1E" />
               </a>
-              <span className="text-xs font-regular font-cocon">skillseed@wekraft.co</span>
+              <span className="text-xs font-regular font-cocon">
+                skillseed@wekraft.co
+              </span>
             </div>
           </div>
           <div></div>
