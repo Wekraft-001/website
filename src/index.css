@@ -27,7 +27,7 @@
   /* FONT FAMILY */
   --font-cocon: "Cocon", sans-serif;
 
-  --font-nexa:"nexaround", sans-serif;
+  --font-nexa: "nexaround", sans-serif;
 
   --font-nunito: "Nunito", sans-serif;
 
@@ -37,15 +37,12 @@
   /* COLORS */
   --color-primary-100: #2a6b8b;
 
-  --color-primary-200:#fab548;
-
-  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  /* ... */
+  --color-primary-200: #fab548;
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
@@ -54,6 +51,3 @@
     opacity: 0.7;
   }
 }
-
-      
-        
