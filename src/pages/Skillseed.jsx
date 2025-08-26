@@ -127,11 +127,12 @@ const Skillseed = () => {
           >
             We believe every child carries a seed of greatness
           </h1>
-          {/* <a
-            href="#more"
+          <a
+            href="https://quiz.wekraft.co/"
+            target="_blank"
             className="flex items-center justify-center md:justify-start"
-          > */}
-          <motion.button
+          >
+            {/* <motion.button
             onClick={scrollToMore}
             className="w-[171px] h-[50px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
             initial={{ opacity: 0, y: 50 }}
@@ -142,8 +143,20 @@ const Skillseed = () => {
             <span>
               <IoArrowForwardCircle className="mx-2" />
             </span>
-          </motion.button>
-          {/* </a> */}
+          </motion.button> */}
+            <motion.button
+              onClick={scrollToMore}
+              className="w-[171px] h-[50px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            >
+              Take Quiz
+              <span>
+                <IoArrowForwardCircle className="mx-2" />
+              </span>
+            </motion.button>
+          </a>
         </motion.div>
 
         {/* Image Content */}
