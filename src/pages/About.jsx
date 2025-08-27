@@ -85,8 +85,8 @@ const About = () => {
             where little minds grow <br /> big dreams
           </p>
           <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
-            Our aim is to ensure that every child is empowered to thrive
-            <br /> in their future endeavours
+            Every child has potential waiting to be unlocked.
+            <br /> We help them discover it.
           </p>
           <a href="#more">
             <button
@@ -104,33 +104,36 @@ const About = () => {
       {/* Mission & Vision */}
       <div
         id="more"
-        className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-5 md:gap-10 px-4 py-8 bg-[#FFFBF7]"
+        className="w-full flex flex-col-reverse md:flex-row items-stretch justify-center gap-5 md:gap-10 px-4 py-8 bg-[#FFFBF7]"
       >
         <div className="flex flex-col items-center gap-2 my-5 md:my-10">
           {/* Mission Card */}
-          <div className="relative p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
-            <h3 className="text-xl font-semibold mb-2">Mission</h3>
+          <div className="relative p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[500px] font-cocon text-[#1E1E1E]/65">
+            <h3 className="text-xl font-semibold mb-2">Our Commitment</h3>
             <p className="text-xs md:text-sm leading-6">
-              To spark confidence, creativity, and curiosity in every child by
-              giving them the tools, exposure, and inspiration to dream boldly
-              and learn with purpose.
+              At Wekraft, we are committed to shaping Africa’s next generation
+              of thinkers, makers, and leaders. <br />
+              <br />
+              By aligning with SDG 4, SDG 8, and Africa’s Agenda 2063, we are
+              equipping children with the creativity, innovation, and
+              problem-solving skills to thrive in the future of work.
             </p>
           </div>
 
           {/* Decorative Arrow */}
-          <div>
+          {/* <div>
             <img src={Arrow} />
-          </div>
+          </div> */}
 
           {/* Vision Card */}
-          <div className="relative bg-white p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
+          {/* <div className="relative bg-white p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
             <h3 className="text-xl font-semibold mb-2">Vision</h3>
             <p className="text-xs md:text-sm leading-6">
               A future where every child grows up feeling seen, supported, and
               excited about who they are becoming and parents are right there
               beside them on the journey.
             </p>
-          </div>
+          </div> */}
         </div>
         <div>
           <img src={AboutTeam} />
@@ -180,15 +183,19 @@ const About = () => {
             <div className="my-4 text-white font-nexa text-xl md:text-5xl">
               Our Story
             </div>
-            <div className="w-full md:w-[800px] bg-[#FFFFFF] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[40%] text-sm md:text-xl border border-dashed border-[#3C91BA] leading-10">
-              WeKraft serves a diverse clientele including parents, educators,
-              schools, and non-profit organizations. These stakeholders are keen
-              on integrating innovative educational tools into their teaching
-              environments to improve engagement and learning outcomes.
+            <div className="w-full md:w-[800px] bg-[#FFFFFF] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[40%] text-sm md:text-xl border border-dashed border-[#3C91BA] leading-12">
+              Wekraft was born from a simple belief: learning should inspire,
+              not confine. Too often, children pass through school memorizing
+              facts but never discovering their passions. We set out to change
+              that first through dynamic in-person programs, then with
+              innovative toolkits, and now with SkillSeed, our AI-powered
+              platform.
               <br />
-              Additionally, WeKraft partners with retailers to make its
-              educational toolkits widely available, thereby reaching a broader
-              market.
+              We serve children, parents, and schools who believe education
+              should be more than exams; it should be a journey of discovery. We
+              also partner with organizations and communities to make sure no
+              child is left behind. Because when a child finds their spark, they
+              don’t just learn they begin to dream.
             </div>
           </div>
           <div>
@@ -200,15 +207,18 @@ const About = () => {
           <div className="mb-2 text-white font-nexa text-xl text-center">
             Our Story
           </div>
-          <div className="bg-[#FFFFFF] rounded-4xl p-5 font-cocon text-[#1E1E1E]/[40%] text-sm border border-dashed border-[#3C91BA] leading-8 relative">
-            WeKraft serves a diverse clientele including parents, educators,
-            schools, and non-profit organizations. These stakeholders are keen
-            on integrating innovative educational tools into their teaching
-            environments to improve engagement and learning outcomes.
+          <div className="bg-[#FFFFFF] rounded-4xl p-4 font-cocon text-[#1E1E1E]/[40%] text-sm border border-dashed border-[#3C91BA] leading-10 relative">
+            Wekraft was born from a simple belief: learning should inspire, not
+            confine. Too often, children pass through school memorizing facts
+            but never discovering their passions. We set out to change that
+            first through dynamic in-person programs, then with innovative
+            toolkits, and now with SkillSeed, our AI-powered platform.
             <br />
-            Additionally, WeKraft partners with retailers to make its
-            educational toolkits widely available, thereby reaching a broader
-            market.
+            We serve children, parents, and schools who believe education should
+            be more than exams; it should be a journey of discovery. We also
+            partner with organizations and communities to make sure no child is
+            left behind. Because when a child finds their spark, they don’t just
+            learn they begin to dream.
           </div>
 
           {/* Star positioned on the top-right corner of the box */}

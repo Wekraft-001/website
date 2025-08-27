@@ -19,22 +19,22 @@ const Skillseed = () => {
     {
       id: 1,
       message:
-        "One-on-one interviews to assess interests, passions,and career aspirations.",
+        "Kids interact with gamified questions to assess interests, passions, and career aspirations.",
     },
     {
       id: 2,
       message:
-        "Curated reading materials and book clubs aligned with children’s interests.",
+        "Curated reading materials and videos aligned with children’s interests are recommended on their dashboards.",
     },
     {
       id: 3,
       message:
-        "Practical, hands-on activities to complement school curriculum.",
+        "Practical, hands-on activities to build skills are made available on their platforms.",
     },
     {
       id: 4,
       message:
-        "Curated reading materials and book clubs aligned with children’s interests.",
+        " Mentorship programs and workplace visits with professionals in diverse industries. Parents and children can book sessions on the platform.",
     },
   ];
   const exposure = [
@@ -181,9 +181,8 @@ const Skillseed = () => {
             </p>
             <img src={Core1} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Tailored programs for children that help them discover and explore
-              their passions, connect classroom learning to real-world
-              applications, and develop skills for future careers.
+              AI-powered paths that adapt to each child’s interests, strengths,
+              and dreams.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4 md:gap-10 md:w-[50%]">
@@ -272,9 +271,8 @@ const Skillseed = () => {
             </p>
             <img src={Core2} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Opportunities for children to interact with professionals and
-              workplaces, providing a practical understanding of various
-              careers.
+              Direct interactions with professionals, workplaces, and mentors to
+              inspire future-ready choices.
             </p>
           </div>
         </div>
@@ -286,8 +284,8 @@ const Skillseed = () => {
             </p>
             <img src={Core3} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Fun, educational exercises designed to keep children engaged and
-              curious.
+              Fun, skill-building challenges that spark creativity, teamwork,
+              and resilience.
             </p>
           </div>
           <div className="w-full flex flex-col items-center gap-5 md:gap-10 py-5 md:py-10">
@@ -366,8 +364,8 @@ const Skillseed = () => {
             </p>
             <img src={Core4} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Tools and tips to help parents nurture their child’s development
-              and align efforts with the school and SkillSeed.
+              Guidance and resources to help parents nurture growth and connect
+              learning at home.
             </p>
           </div>
         </div>

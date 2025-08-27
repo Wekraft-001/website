@@ -57,15 +57,11 @@ const Toolkit = () => {
               Science Toolkits – Turning Classrooms into Discovery Labs
             </p>
             <p className="font-regular font-cocon text-base md:text-xl text-[#1E1E1E]/60 text-justify my-3 md:my-6 leading-8">
-              Imagine the thrill of a child mixing solutions and watching colors
-              change, or assembling circuits that light up with a touch.
-              Wekraft’s Science Toolkits transform learning into an adventure,
-              bringing science to life through six hands-on experiments, each
-              carefully aligned with the curriculum. With a physical manual for
-              step-by-step guidance and a QR code leading to our interactive
-              digital platform, students don’t just memorize science, they
-              experience it. These toolkits ignite curiosity, deepen
-              understanding, and make learning truly unforgettable.
+              From lighting up circuits to mixing solutions that fizz and change
+              color, Wekraft’s Science Toolkits transform abstract lessons into
+              living experiments. With six curriculum-aligned, hands-on
+              activities and digital support, science becomes an adventure
+              igniting curiosity and building real understanding.
             </p>
           </div>
           <div>
@@ -81,15 +77,11 @@ const Toolkit = () => {
               Career-Aligned Toolkits – Where Learning Meets the Future
             </p>
             <p className="font-regular font-cocon text-base md:text-xl text-[#1E1E1E]/60 text-justify my-3 md:my-6 leading-8">
-              What if learning could be a glimpse into the future? Our
-              Career-Aligned Toolkits don’t just teach, they inspire. Designed to
-              bridge the gap between classroom learning and real-world
-              professions, these kits immerse students in practical, hands-on
-              experiences that spark career exploration and skill development.
-              Whether it's building, designing, or problem-solving, each toolkit
-              is a stepping stone toward a future filled with possibilities.
-              We’re not just preparing students for exams, we’re preparing them
-              for life.
+              Every child deserves a glimpse of what they can become. Our
+              Career-Aligned Toolkits let students experiment with professions
+              designing, building, problem-solving so they connect classroom
+              learning with future careers. We don’t just prepare students for
+              exams, we prepare them for life.
             </p>
           </div>
         </div>

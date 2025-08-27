@@ -77,8 +77,8 @@ const Home = () => {
             we empower minds <br /> and inspire futures
           </p>
           <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
-            Our aim is to ensure that every child is empowered to thrive
-            <br /> in their future endeavours
+            Every child deserves to discover who they are, what they love,
+            <br /> and how they can thrive in tomorrow's world.
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfvNPv7b8PHXlDfL1yX4sKqAP71XAEGzssEwOSv7esMAycscA/viewform"
@@ -107,8 +107,8 @@ const Home = () => {
             <h3 className="text-xl font-semibold mb-2">Mission</h3>
             <p className="text-xs md:text-sm">
               To spark confidence, creativity, and curiosity in every child by
-              giving them the tools, exposure, and inspiration to dream boldly
-              and learn with purpose.
+              equipping them with tools, exposure, and mentorship that connect
+              learning to life.
             </p>
             {/* Decorative Bubble */}
             <div className="absolute top-[160px] md:top-[210px] -left-10 md:-left-20 bg-[#3C91BA] rounded-full w-24 h-24"></div>
@@ -125,9 +125,10 @@ const Home = () => {
           <div className="relative bg-white p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65 rotate-">
             <h3 className="text-xl font-semibold mb-2">Vision</h3>
             <p className="text-xs md:text-sm">
-              A future where every child grows up feeling seen, supported, and
-              excited about who they are becoming and parents are right there
-              beside them on the journey.
+              A future where every child across Africa is prepared to dream
+              boldly, think critically, and grow into innovative, compassionate
+              leaders with parents, schools, and communities walking alongside
+              them.
             </p>
             {/* Decorative Bubble */}
             <div className="absolute -top-[110px] md:-top-[100px] -right-10 md:-right-20 bg-yellow-300 rounded-full w-24 h-24"></div>
@@ -151,13 +152,13 @@ const Home = () => {
               Who We Are
             </div>
             <div className="w-full md:w-[600px] bg-[#FFFFFF]/[85%] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[60%] text-sm md:text-xl">
-              WeKraft Limited is a pioneering educational technology company
-              headquartered in Rwanda, dedicated to transforming learning
-              experiences for children across Africa. <br />
+              WeKraft Limited is a pioneering EdTech company based in Rwanda,
+              dedicated to bridging the gap between classroom learning and
+              real-world opportunities.
               <br />
-              By integrating curriculum-aligned educational toolkits and dynamic
-              in-person programs, WeKraft strives to make education more
-              engaging, practical, and accessible.
+              <br />
+              From hands-on toolkits to our AI-powered SkillSeed platform, we
+              make learning relevant, practical, and life-shaping.
             </div>
             <Link
               to="/about-us"
@@ -258,37 +259,39 @@ const Home = () => {
             <div className="absolute top-6 left-1/2 transform -translate-x-1/2 -translate-y-full w-50 p-3 flex flex-col items-center">
               <img src={Icon1} alt="Content" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Created 26 weeks of content for our immersive learning toolkit.
+                We turn classrooms and homes into hubs of discovery with
+                hands-on learning experiences.
               </p>
             </div>
             {/* Right stat */}
             <div className="absolute top-1/2 right-0 transform translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon3} alt="Partners" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Partnered with 8+ schools, women's groups in creating employment
-                opportunities.
+                We bridge education with real-world careers, helping children
+                see possibilities beyond exams.
               </p>
             </div>
             {/* Left stat */}
             <div className="absolute top-1/2 left-0 transform -translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon2} alt="Expansion" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Expanding operations to Kenya, Tanzania in scaling our impact
-                beyond borders.
+                From creativity to critical thinking, we nurture competencies
+                Africa needs for tomorrow.
               </p>
             </div>
             {/* Bottom stat right */}
             <div className="absolute -bottom-4 left-full right-10 transform -translate-x-1/2 translate-y-full w-50 p-3 flex flex-col items-center">
               <img src={Icon5} alt="Impact" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Impacted over 500 children in the last 2 years.
+                Through partnerships and CSR, we ensure underserved children
+                aren’t left behind.
               </p>
             </div>{" "}
             {/* Bottom stat left */}
             <div className="absolute -bottom-0 left-10 right-1/2 transform translate-y-full -translate-x-full w-50 p-3 flex flex-col items-center">
               <img src={Icon4} alt="Engagement" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                5 hours of engagement time per week for every child.
+                We equip adults with tools to nurture purpose-driven learners.
               </p>
             </div>
           </div>
