@@ -32,23 +32,23 @@ const Home = () => {
   const stats = [
     {
       icon: Icon1,
-      text: "Created 26 weeks of content for our immersive learning toolkit.",
+      text: "We turn classrooms and homes into hubs of discovery with hands-on learning experiences.",
     },
     {
       icon: Icon2,
-      text: "Expanding operations to Kenya, scaling our impact beyond borders.",
+      text: "From creativity to critical thinking, we nurture competencies Africa needs for tomorrow.",
     },
     {
       icon: Icon3,
-      text: "Partnered with 8+ schools, women's groups, creating employment opportunities.",
+      text: "We bridge education with real-world careers, helping children see possibilities beyond exams.",
     },
     {
       icon: Icon4,
-      text: "5 hours of engagement time per week",
+      text: "We equip adults with tools to nurture purpose-driven learners.",
     },
     {
       icon: Icon5,
-      text: "Impacted over 500 children",
+      text: "Through partnerships and CSR, we ensure underserved children aren't left behind.",
     },
   ];
   return (
