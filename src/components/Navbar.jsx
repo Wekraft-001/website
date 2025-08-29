@@ -147,6 +147,13 @@ const Navbar = () => {
           >
             Contact Us
           </NavLink>
+          <a
+            href="https://outreach.wekraft.co/"
+            target="_blank"
+            className="p-2 hover:font-primaryBold text-[#455A64] hover:bg-[#3C91BA]/[50%] transition duration-200"
+          >
+            Outreach
+          </a>
           {/* <div className="border-b border-[#565656] w-full"></div> */}
           {/* <NavLink
             to="/contact-us"
