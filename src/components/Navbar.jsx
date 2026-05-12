@@ -26,7 +26,6 @@ const Navbar = () => {
       </Link>
 
       <a
-        // href="https://docs.google.com/forms/d/e/1FAIpQLSfvNPv7b8PHXlDfL1yX4sKqAP71XAEGzssEwOSv7esMAycscA/viewform"
         href="https://parents.wekraft.co/signup"
         target="_blank"
         className=" rounded-full bg-[#FAB548] text-white font-primarySemibold flex items-center justify-center text-sm hover:bg-[#FAB548]/[30%] transition duration-200 uppercase md:hidden p-2"

@@ -63,7 +63,7 @@ const Home = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src="https://wekraftdocs.blob.core.windows.net/videos/Wekraft.mp4"
+            src="https://wekraft.blob.core.windows.net/videos/Wekraft.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -81,7 +81,7 @@ const Home = () => {
             <br /> and how they can thrive in tomorrow's world.
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfvNPv7b8PHXlDfL1yX4sKqAP71XAEGzssEwOSv7esMAycscA/viewform"
+            href="https://parents.wekraft.co/signup"
             target="_blank"
           >
             <button

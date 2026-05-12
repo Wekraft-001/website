@@ -71,7 +71,7 @@ const About = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src="https://wekraftdocs.blob.core.windows.net/videos/Highlight.mp4"
+            src="https://wekraft.blob.core.windows.net/videos/Highlight2%20(1)(1)(1).mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
