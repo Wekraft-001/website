@@ -71,13 +71,20 @@ const Navbar = () => {
         >
           Contact Us
         </NavLink>
-        <a
+        {/* <a
           href="https://outreach.wekraft.co/"
           target="_blank"
           className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
         >
           Outreach
-        </a>
+        </a> */}
+         <NavLink
+          to="/outreach"
+          style={activeStyle}
+          className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
+        >
+          Outreach
+        </NavLink>
       </nav>
       <a
         // href="https://docs.google.com/forms/d/e/1FAIpQLSfvNPv7b8PHXlDfL1yX4sKqAP71XAEGzssEwOSv7esMAycscA/viewform"
