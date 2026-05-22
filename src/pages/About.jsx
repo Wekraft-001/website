@@ -88,7 +88,7 @@ const About = () => {
             Every child has potential waiting to be unlocked.
             <br /> We help them discover it.
           </p>
-          <a href="#more">
+          {/* <a href="#more">
             <button
               // onClick={() => handleBecomeMemberClick()}
               className="w-[202px] h-[48px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
@@ -98,7 +98,7 @@ const About = () => {
                 <IoArrowForwardCircle className="mx-2" />
               </span>
             </button>
-          </a>
+          </a> */}
         </div>
       </div>
       {/* Mission & Vision */}
