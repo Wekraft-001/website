@@ -27,6 +27,8 @@ import Startups from "../assets/partners/250-startups-logo.svg";
 import CMU from "../assets/partners/cmu-africa-logo.svg";
 import AA from "../assets/partners/Accelerate-Africa-logo.svg";
 import BPN from "../assets/partners/BPN-logo.svg";
+import FAQ from "../components/FAQ";
+
 
 const Home = () => {
   const stats = [
@@ -433,6 +435,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* FAQ Section */}
+      <FAQ />
     </>
   );
 };

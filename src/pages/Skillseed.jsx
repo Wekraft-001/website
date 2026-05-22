@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { IoArrowForwardCircle } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import SkillseedHeroIm from "../assets/skillseed-hero.svg";
 import Arrow from "../assets/arrow.svg";
 import Core1 from "../assets/journey.svg";
@@ -103,10 +104,7 @@ const Skillseed = () => {
     },
   ];
 
-  const scrollToMore = () => {
-    const section = document.querySelector("#more");
-    section?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
   return (
     <>
       {/* Hero Section */}
@@ -140,7 +138,7 @@ const Skillseed = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
-            See More
+            Take Quiz
             <span>
               <IoArrowForwardCircle className="mx-2" />
             </span>
