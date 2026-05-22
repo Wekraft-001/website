@@ -1,0 +1,93 @@
+{
+  "company_name": "Wekraft Limited",
+  "headquarters": "Norrsken House, Kigali, Rwanda",
+  "locations": [
+    "Rwanda",
+    "Kenya",
+    "Tanzania"
+  ],
+  "mission": "To spark confidence, creativity, and curiosity in every child by giving them the tools, exposure, and inspiration to dream boldly and learn with purpose.",
+  "vision": "A future where every child grows up feeling seen, supported, and excited about who they are becoming and parents are right there beside them on the journey.",
+  "core_offerings": [
+    {
+      "title": "SkillSeed AI Platform",
+      "description": "An AI-powered career discovery and life-skills platform for children aged 6-18, helping them uncover passions and build future-ready skills."
+    },
+    {
+      "title": "Tailored Learning Kits",
+      "description": "Curated educational toolkits (STEM and Career-aligned) designed to turn classrooms and homes into discovery labs."
+    },
+    {
+      "title": "Experiential Learning",
+      "description": "Hands-on workshops, innovation challenges, and mentor connections that bridge the gap between classroom and career."
+    }
+  ],
+  "intelligence_types": [
+    "Logical-mathematical",
+    "Linguistic",
+    "Spatial",
+    "Naturalistic",
+    "Interpersonal",
+    "Intrapersonal",
+    "Bodily-kinesthetic"
+  ],
+  "contact": {
+    "phone": "+250793177089 / +250787161453",
+    "email": "skillseed@wekraft.co",
+    "address": "Norrsken House, Kigali, RW",
+    "whatsapp": "+254716564553"
+  },
+  "faqs": [
+    {
+      "id": "faq_1",
+      "question": "What exactly is Wekraft?",
+      "answer": "Wekraft Limited is a pioneering educational technology company based in Rwanda. We specialize in creating curriculum-aligned toolkits and programs that make learning more immersive, practical, and fun for children across Africa."
+    },
+    {
+      "id": "faq_2",
+      "question": "What is SkillSeed?",
+      "answer": "SkillSeed is our flagship AI-powered platform for children aged 6–18. It helps them explore their interests early, build future-ready skills, and connect with mentors who open doors to real-world career opportunities."
+    },
+    {
+      "id": "faq_3",
+      "question": "How does SkillSeed use Artificial Intelligence?",
+      "answer": "We use AI to personalize every child's journey. The platform identifies a learner's strengths and interests through assessments, then curates tailored challenges, books, and mentor connections specific to their unique growth path."
+    },
+    {
+      "id": "faq_4",
+      "question": "How do your 'Tailored Learning Kits' work?",
+      "answer": "Our toolkits are curated sets of educational materials that follow national curricula. They turn learning into a hands-on experience, allowing children to experiments and build projects instead of just reading from textbooks."
+    },
+    {
+      "id": "faq_5",
+      "question": "What makes the Wekraft approach unique?",
+      "answer": "Unlike traditional systems focused on exam-centric memorization, we focus on talent discovery. We bridge the gap between curiosity and career by combining AI-driven profiling with real-world mentorship and hands-on toolkits."
+    },
+    {
+      "id": "faq_6",
+      "question": "Who can benefit from Wekraft and SkillSeed?",
+      "answer": "We serve children aged 6-18, parents wanting structured guidance for their child's future, and schools/educators looking for innovative ways to integrate future-of-work readiness into their curriculum."
+    },
+    {
+      "id": "faq_7",
+      "question": "Are your products available outside of Rwanda?",
+      "answer": "Yes! While we are headquartered at Norrsken House in Kigali, we have already reached hundreds of learners across Kenya and are expanding into Tanzania and the broader East African region."
+    },
+    {
+      "id": "faq_8",
+      "question": "What has Wekraft achieved so far?",
+      "answer": "In under two years, we've reached over 600 learners, partnered with 10+ schools, and were named African Regional Winners at the 2025 AIM Summit Challenge in Abu Dhabi."
+    },
+    {
+      "id": "faq_9",
+      "question": "Does Wekraft have a social mission?",
+      "answer": "Yes! We operate with a 'one-for-one' social model where every paid subscription helps us provide subsidized access to children from low-income households, ensuring that technology-driven discovery is inclusive."
+    },
+    {
+      "id": "faq_10",
+      "question": "How can I get started or partner with you?",
+      "answer": "You can sign up directly via our website, or reach out to us at skillseed@wekraft.co. We are always looking for mentors, partner schools, and CSR-driven organizations to join our mission."
+    }
+  ],
+  "full_intelligence": "Wekraft Ltd is an education technology company on a mission to transform how children across Africa learn, discover themselves, and prepare for the future of work. We began with in-person programmes and STEM toolkits designed to foster a love of learning through hands-on exploration. SkillSeed bridges the critical gap between classroom learning and real-world skills. It helps children aged 6–18 discover their interests and passions early by creating personalised learner profiles, curating tailored content, and connecting them to mentors and career discovery opportunities. Traction so far: reached over 600 children in Kenya and Rwanda. African Regional Winners at the AIM Summit Challenge in Abu Dhabi (2025). Supported by JASIRI, BPN Rwanda, and Norrsken."
+}
