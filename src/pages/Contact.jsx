@@ -5,14 +5,16 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaPhone } from "react-icons/fa6";
 
 const Contact = () => {
+  const apiUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     question: "",
   });
-  
+
   const [status, setStatus] = useState({
     loading: false,
     success: null,
@@ -21,20 +23,18 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.firstName || !formData.email || !formData.question) {
       setStatus({
         loading: false,
         success: false,
-        error: "Please fill in all required fields (First name, Email, and Question).",
+        error:
+          "Please fill in all required fields (First name, Email, and Question).",
       });
       return;
     }
@@ -42,43 +42,37 @@ const Contact = () => {
     setStatus({ loading: true, success: null, error: null });
 
     try {
-      const response = await fetch("http://localhost:4000/api/contact", {
+      const response = await fetch(`${apiUrl}/contact`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
-      if (response.ok && result.ok) {
-        setStatus({
-          loading: false,
-          success: true,
-          error: null,
-        });
-        // Reset form
+      if (response.ok) {
+        setStatus({ loading: false, success: true, error: null });
         setFormData({
           firstName: "",
           lastName: "",
           email: "",
-          phone: "",
+          phoneNumber: "",
           question: "",
         });
       } else {
-        setStatus({
-          loading: false,
-          success: false,
-          error: result.error || "Something went wrong. Please try again.",
-        });
+        // NestJS validation errors come back as result.message (string or array)
+        const errorMsg = Array.isArray(result.message)
+          ? result.message.join(", ")
+          : result.message || "Something went wrong. Please try again.";
+
+        setStatus({ loading: false, success: false, error: errorMsg });
       }
     } catch (err) {
       console.error("Submission error:", err);
       setStatus({
         loading: false,
         success: false,
-        error: "Failed to connect to the server. Make sure the API server is running.",
+        error: "Failed to connect to the server. Please try again later.",
       });
     }
   };
@@ -97,15 +91,20 @@ const Contact = () => {
           Contact Us
         </p>
       </div>
+
       <div className="relative w-full max-w-3xl p-4 -top-20">
         {/* Header */}
         <div className="w-full h-[150px] rounded-t-[30px] bg-[#FFF1DC]/99 text-center flex items-center justify-center font-cocon text-xl md:text-3xl text-[#1E1E1E]/50">
           Let's get your details in order for us
           <br /> to help you
         </div>
+
         {/* Form Section */}
-        <form onSubmit={handleSubmit} className="bg-[#FFFCF8] border-l-[1.09px] border-r-[1.09px] border-dashed border-[#3C91BA] p-4 md:p-6">
-          {/* Status Message */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-[#FFFCF8] border-l-[1.09px] border-r-[1.09px] border-dashed border-[#3C91BA] p-4 md:p-6"
+        >
+          {/* Status Messages */}
           {status.error && (
             <div className="mb-6 p-4 bg-red-50 text-red-700 border border-red-200 rounded-lg text-sm font-semibold">
               ⚠️ {status.error}
@@ -113,7 +112,8 @@ const Contact = () => {
           )}
           {status.success && (
             <div className="mb-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg text-sm font-semibold">
-              🎉 Thank you! Your message has been sent successfully to skillseedrw@gmail.com.
+              🎉 Thank you! Your message has been sent. We will get back to you
+              shortly.
             </div>
           )}
 
@@ -138,6 +138,7 @@ const Contact = () => {
               className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
             />
           </div>
+
           {/* Email and Phone Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-6 md:mb-10">
             <input
@@ -151,16 +152,17 @@ const Contact = () => {
             />
             <input
               type="tel"
-              name="phone"
+              name="phoneNumber" // ← matches backend DTO
               placeholder="Phone number"
-              value={formData.phone}
+              value={formData.phoneNumber}
               onChange={handleChange}
               disabled={status.loading}
               className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
             />
           </div>
+
           {/* Question Field */}
-          <div className="">
+          <div>
             <textarea
               rows="4"
               name="question"
@@ -169,14 +171,17 @@ const Contact = () => {
               onChange={handleChange}
               disabled={status.loading}
               className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
-            ></textarea>
+            />
           </div>
+
           {/* Send Button */}
           <div className="mt-6">
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={status.loading}
-              className={`flex items-center bg-[#FAB548] text-white font-semibold uppercase px-6 py-3 rounded-full shadow-md hover:bg-[#f8a933] transition duration-300 font-cocon ${status.loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`flex items-center bg-[#FAB548] text-white font-semibold uppercase px-6 py-3 rounded-full shadow-md hover:bg-[#f8a933] transition duration-300 font-cocon ${
+                status.loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
               {status.loading ? "Sending..." : "Send"}
               <span>
@@ -185,30 +190,26 @@ const Contact = () => {
             </button>
           </div>
         </form>
+
+        {/* Contact Info */}
         <div className="bg-[#FFF1DC]/99 p-4 md:p-6 space-y-6">
           <p className="text-[#1E1E1E]/50 text-2xl md:text-4xl font-cocon">
             Contact Information
           </p>
           <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
-            <a href="#">
-              <IoLocationSharp size={20} color="#1E1E1E" />
-            </a>
-            <span className=" md:text-xl font-regular">
+            <IoLocationSharp size={20} color="#1E1E1E" />
+            <span className="md:text-xl font-regular">
               Norsken House, Kigali, RW
             </span>
           </div>
           <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
-            <a href="#" target="_blank">
-              <AiOutlineMail size={20} color="#1E1E1E" />
-            </a>
+            <AiOutlineMail size={20} color="#1E1E1E" />
             <span className="md:text-xl font-regular">
               skillseed@wekraft.co
             </span>
           </div>
           <div className="flex items-center gap-2 font-bold text-[#1E1E1E]/60">
-            <a href="#">
-              <FaPhone size={20} color="#1E1E1E" />
-            </a>
+            <FaPhone size={20} color="#1E1E1E" />
             <span className="md:text-xl font-regular">
               +250793177089 / +250787161453
             </span>
