@@ -4,8 +4,11 @@ import { IoArrowForwardCircle } from "react-icons/io5";
 import ToolkitHeroIm from "../assets/toolkit-hero.svg";
 import Toolkit1 from "../assets/toolkit-1.svg";
 import Toolkit2 from "../assets/toolkit-2.svg";
+import { useLanguage } from "../components/LanguageContext";
 
 const Toolkit = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       {/* Hero Section */}
@@ -21,7 +24,7 @@ const Toolkit = () => {
             className="text-white font-primaryBold text-2xl md:text-5xl md:leading-[70px] text-center md:text-left uppercase font-nexa"
             style={{ textShadow: "2px 2px 2px #FAB548" }}
           >
-            Our Toolkit makes learning unforgettable
+            {t("toolkit.hero_title")}
           </h1>
           <a
             href="#more"
@@ -33,7 +36,7 @@ const Toolkit = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             >
-              See More
+              {t("btn.see_more")}
               <span>
                 <IoArrowForwardCircle className="mx-2" />
               </span>
@@ -54,14 +57,10 @@ const Toolkit = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="md:w-[600px]">
             <p className="font-medium font-cocon text-xl md:text-4xl text-[#3C91BA] text-center md:text-left">
-              Science Toolkits – Turning Classrooms into Discovery Labs
+              {t("toolkit.science_title")}
             </p>
             <p className="font-regular font-cocon text-base md:text-xl text-[#1E1E1E]/60 text-justify my-3 md:my-6 leading-8">
-              From lighting up circuits to mixing solutions that fizz and change
-              color, Wekraft’s Science Toolkits transform abstract lessons into
-              living experiments. With six curriculum-aligned, hands-on
-              activities and digital support, science becomes an adventure
-              igniting curiosity and building real understanding.
+              {t("toolkit.science_desc")}
             </p>
           </div>
           <div>
@@ -74,14 +73,10 @@ const Toolkit = () => {
           </div>
           <div className="md:w-[600px]">
             <p className="font-medium font-cocon text-xl md:text-4xl text-[#3C91BA] text-center md:text-left">
-              Career-Aligned Toolkits – Where Learning Meets the Future
+              {t("toolkit.career_title")}
             </p>
             <p className="font-regular font-cocon text-base md:text-xl text-[#1E1E1E]/60 text-justify my-3 md:my-6 leading-8">
-              Every child deserves a glimpse of what they can become. Our
-              Career-Aligned Toolkits let students experiment with professions
-              designing, building, problem-solving so they connect classroom
-              learning with future careers. We don’t just prepare students for
-              exams, we prepare them for life.
+              {t("toolkit.career_desc")}
             </p>
           </div>
         </div>

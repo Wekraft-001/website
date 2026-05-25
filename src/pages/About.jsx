@@ -24,8 +24,11 @@ import John from "../assets/teams/john.svg";
 import Ben from "../assets/teams/ben.svg";
 import Florence from "../assets/teams/florence.svg";
 import Blue_Star from "../assets/shooting-star_blue.svg";
+import { useLanguage } from "../components/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+
   const teams = [
     {
       image: Staphord,
@@ -81,19 +84,17 @@ const About = () => {
           <p
             className="text-3xl md:text-6xl font-primarySemibold text-gray-200 md:w-[900px] mb-2 text-center uppercase font-nexa"
             style={{ textShadow: "2px 2px 2px #FAB548" }}
+            dangerouslySetInnerHTML={{__html: t("about.hero_title")}}
           >
-            where little minds grow <br /> big dreams
           </p>
-          <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
-            Every child has potential waiting to be unlocked.
-            <br /> We help them discover it.
+          <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon" dangerouslySetInnerHTML={{__html: t("about.hero_subtitle")}}>
           </p>
           <a href="#more">
             <button
               // onClick={() => handleBecomeMemberClick()}
               className="w-[202px] h-[48px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
             >
-              See More
+              {t("btn.see_more")}
               <span>
                 <IoArrowForwardCircle className="mx-2" />
               </span>
@@ -109,14 +110,8 @@ const About = () => {
         <div className="flex flex-col items-center gap-2 my-5 md:my-10">
           {/* Mission Card */}
           <div className="relative p-4 md:p-6 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[500px] font-cocon text-[#1E1E1E]/65">
-            <h3 className="text-xl font-semibold mb-2">Our Commitment</h3>
-            <p className="text-xs md:text-sm leading-6">
-              At Wekraft, we are committed to shaping Africa’s next generation
-              of thinkers, makers, and leaders. <br />
-              <br />
-              By aligning with SDG 4, SDG 8, and Africa’s Agenda 2063, we are
-              equipping children with the creativity, innovation, and
-              problem-solving skills to thrive in the future of work.
+            <h3 className="text-xl font-semibold mb-2">{t("about.commitment_title")}</h3>
+            <p className="text-xs md:text-sm leading-6" dangerouslySetInnerHTML={{__html: t("about.commitment_desc")}}>
             </p>
           </div>
 
@@ -148,11 +143,11 @@ const About = () => {
       >
         <div className="w-full flex flex-col items-center justify-center px-4 py-12 md:m-10">
           <div className="my-4 text-white font-nexa text-xl md:text-5xl">
-            Meet Our Team
+            {t("about.team_title")}
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 2xl:gap-20">
-            {teams.map((team) => (
-              <div className="flex flex-col items-center justify-center gap-2 font-cocon">
+            {teams.map((team, index) => (
+              <div key={index} className="flex flex-col items-center justify-center gap-2 font-cocon">
                 <div className="w-full md:w-50 md:h-50">
                   <img src={team.image} className="w-full h-full" />
                 </div>
@@ -181,21 +176,9 @@ const About = () => {
         <div className="hidden md:flex items-center justify-center gap-5 md:gap-10 py-5 md:py-10">
           <div className="flex flex-col items-center justify-center md:items-start gap-4">
             <div className="my-4 text-white font-nexa text-xl md:text-5xl">
-              Our Story
+              {t("about.story_title")}
             </div>
-            <div className="w-full md:w-[800px] bg-[#FFFFFF] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[40%] text-sm md:text-xl border border-dashed border-[#3C91BA] leading-12">
-              Wekraft was born from a simple belief: learning should inspire,
-              not confine. Too often, children pass through school memorizing
-              facts but never discovering their passions. We set out to change
-              that first through dynamic in-person programs, then with
-              innovative toolkits, and now with SkillSeed, our AI-powered
-              platform.
-              <br />
-              We serve children, parents, and schools who believe education
-              should be more than exams; it should be a journey of discovery. We
-              also partner with organizations and communities to make sure no
-              child is left behind. Because when a child finds their spark, they
-              don’t just learn they begin to dream.
+            <div className="w-full md:w-[800px] bg-[#FFFFFF] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[40%] text-sm md:text-xl border border-dashed border-[#3C91BA] leading-12" dangerouslySetInnerHTML={{__html: t("about.story_desc")}}>
             </div>
           </div>
           <div>
@@ -205,20 +188,9 @@ const About = () => {
         {/* Mobile View with Positioned Star */}
         <div className="relative md:hidden w-full py-5">
           <div className="mb-2 text-white font-nexa text-xl text-center">
-            Our Story
+            {t("about.story_title")}
           </div>
-          <div className="bg-[#FFFFFF] rounded-4xl p-4 font-cocon text-[#1E1E1E]/[40%] text-sm border border-dashed border-[#3C91BA] leading-10 relative">
-            Wekraft was born from a simple belief: learning should inspire, not
-            confine. Too often, children pass through school memorizing facts
-            but never discovering their passions. We set out to change that
-            first through dynamic in-person programs, then with innovative
-            toolkits, and now with SkillSeed, our AI-powered platform.
-            <br />
-            We serve children, parents, and schools who believe education should
-            be more than exams; it should be a journey of discovery. We also
-            partner with organizations and communities to make sure no child is
-            left behind. Because when a child finds their spark, they don’t just
-            learn they begin to dream.
+          <div className="bg-[#FFFFFF] rounded-4xl p-4 font-cocon text-[#1E1E1E]/[40%] text-sm border border-dashed border-[#3C91BA] leading-10 relative" dangerouslySetInnerHTML={{__html: t("about.story_desc")}}>
           </div>
 
           {/* Star positioned on the top-right corner of the box */}
@@ -237,7 +209,7 @@ const About = () => {
         <div className="w-full flex items-center justify-center gap-5 md:gap-10">
           <img src={Star} className="w-20 md:w-[150px]" />
           <div className="text-[#1E1E1E]/50 font-nexa text-2xl md:text-5xl">
-            We Are Not Alone
+            {t("home.partners_title")}
           </div>
         </div>
         <div className="flex flex-col gap-10 md:p-10 my-4">

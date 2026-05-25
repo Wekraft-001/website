@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import HeroBG from "../assets/contact-hero.svg";
-import { IoArrowForwardCircle, IoLocationSharp } from "react-icons/io5";
-import { AiOutlineMail } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { IoLocationSharp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaLinkedin, FaFacebook, FaTiktok, FaInstagram } from "react-icons/fa";
+import ContactHero from "../assets/contact-hero.svg";
+import knowledge from "../data/websiteKnowledge.json";
+import { useLanguage } from "../components/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -12,210 +17,284 @@ const Contact = () => {
     phone: "",
     question: "",
   });
-  
-  const [status, setStatus] = useState({
-    loading: false,
-    success: null,
-    error: null,
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const contactInfo = knowledge.contact;
+  const socials = knowledge.socials;
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!formData.firstName || !formData.email || !formData.question) {
-      setStatus({
-        loading: false,
-        success: false,
-        error: "Please fill in all required fields (First name, Email, and Question).",
-      });
-      return;
-    }
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    setStatus({ loading: true, success: null, error: null });
+    const emailBody = `
+      Name: ${formData.firstName} ${formData.lastName}
+      Email: ${formData.email}
+      Phone: ${formData.phone}
+      
+      Question:
+      ${formData.question}
+    `;
 
     try {
-      const response = await fetch("http://localhost:4000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      // In a real application, you'd send this to your backend
+      // For now, we'll open the user's email client
+      window.location.href = `mailto:${
+        contactInfo.email
+      }?subject=Inquiry from ${formData.firstName}&body=${encodeURIComponent(
+        emailBody
+      )}`;
+      setSubmitStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        question: "",
       });
-
-      const result = await response.json();
-
-      if (response.ok && result.ok) {
-        setStatus({
-          loading: false,
-          success: true,
-          error: null,
-        });
-        // Reset form
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          question: "",
-        });
-      } else {
-        setStatus({
-          loading: false,
-          success: false,
-          error: result.error || "Something went wrong. Please try again.",
-        });
-      }
-    } catch (err) {
-      console.error("Submission error:", err);
-      setStatus({
-        loading: false,
-        success: false,
-        error: "Failed to connect to the server. Make sure the API server is running.",
-      });
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="w-full flex flex-col items-center relative">
-      {/* Hero Section */}
-      <div
-        className="w-full h-[200px] md:h-[500px] bg-cover bg-center relative flex items-center justify-center px-10 2xl:px-20"
-        style={{ backgroundImage: `url(${HeroBG})` }}
-      >
-        <p
-          className="text-white text-3xl md:text-5xl font-bold z-[3] font-nexa uppercase"
-          style={{ textShadow: "2px 2px 4px #FAB548" }}
+    <>
+      <div className="w-full h-[400px] md:h-[600px] relative bg-cover bg-center flex items-center justify-center p-4">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          Contact Us
-        </p>
-      </div>
-      <div className="relative w-full max-w-3xl p-4 -top-20">
-        {/* Header */}
-        <div className="w-full h-[150px] rounded-t-[30px] bg-[#FFF1DC]/99 text-center flex items-center justify-center font-cocon text-xl md:text-3xl text-[#1E1E1E]/50">
-          Let's get your details in order for us
-          <br /> to help you
-        </div>
-        {/* Form Section */}
-        <form onSubmit={handleSubmit} className="bg-[#FFFCF8] border-l-[1.09px] border-r-[1.09px] border-dashed border-[#3C91BA] p-4 md:p-6">
-          {/* Status Message */}
-          {status.error && (
-            <div className="mb-6 p-4 bg-red-50 text-red-700 border border-red-200 rounded-lg text-sm font-semibold">
-              ⚠️ {status.error}
-            </div>
-          )}
-          {status.success && (
-            <div className="mb-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg text-sm font-semibold">
-              🎉 Thank you! Your message has been sent successfully to skillseedrw@gmail.com.
-            </div>
-          )}
+          <source
+            src="https://wekraft.blob.core.windows.net/videos/contact%20cover(1).mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
 
-          {/* Name Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-6 md:mb-10">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First name *"
-              value={formData.firstName}
-              onChange={handleChange}
-              disabled={status.loading}
-              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last name"
-              value={formData.lastName}
-              onChange={handleChange}
-              disabled={status.loading}
-              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
-            />
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#000000]/60 z-[2]"></div>
+
+        {/* Content */}
+        <motion.div
+          className="relative z-[3] flex flex-col items-center gap-6 pt-20 md:pt-0"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <img src={ContactHero} alt="Contact Icon" className="w-20 md:w-32" />
+          <h1
+            className="text-[#FFFFFF] font-nexa text-3xl md:text-6xl text-center tracking-wide"
+            style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}
+          >
+            {t("contact.hero_title")}
+          </h1>
+        </motion.div>
+      </div>
+      <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-20 p-6 md:p-20 bg-[#FFFBF7]">
+        {/* Contact Form */}
+        <motion.div
+          className="w-full md:w-1/2 max-w-[600px] bg-white p-6 md:p-10 rounded-3xl shadow-xl shadow-[#FAB548]/10 border border-[#3C91BA]/20 font-cocon"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <div className="text-[#3C91BA] text-xl md:text-3xl mb-8 font-medium" dangerouslySetInnerHTML={{__html: t("contact.header")}}>
           </div>
-          {/* Email and Phone Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-6 md:mb-10">
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <div className="flex flex-col md:flex-row gap-5">
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder={t("contact.form_fn")}
+                required
+                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
+              />
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder={t("contact.form_ln")}
+                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
+              />
+            </div>
+
             <input
               type="email"
               name="email"
-              placeholder="Email address *"
               value={formData.email}
               onChange={handleChange}
-              disabled={status.loading}
-              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
+              placeholder={t("contact.form_email")}
+              required
+              className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
             />
+
             <input
               type="tel"
               name="phone"
-              placeholder="Phone number"
               value={formData.phone}
               onChange={handleChange}
-              disabled={status.loading}
-              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
+              placeholder={t("contact.form_phone")}
+              className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
             />
-          </div>
-          {/* Question Field */}
-          <div className="">
+
             <textarea
-              rows="4"
               name="question"
-              placeholder="Question *"
               value={formData.question}
               onChange={handleChange}
-              disabled={status.loading}
-              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
+              placeholder={t("contact.form_q")}
+              required
+              rows="5"
+              className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400 resize-none"
             ></textarea>
-          </div>
-          {/* Send Button */}
-          <div className="mt-6">
-            <button 
-              type="submit" 
-              disabled={status.loading}
-              className={`flex items-center bg-[#FAB548] text-white font-semibold uppercase px-6 py-3 rounded-full shadow-md hover:bg-[#f8a933] transition duration-300 font-cocon ${status.loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full md:w-[200px] h-14 bg-[#FAB548] text-white rounded-full font-semibold text-lg hover:bg-[#e09e3a] transition-colors duration-300 shadow-md ${
+                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              }`}
             >
-              {status.loading ? "Sending..." : "Send"}
-              <span>
-                <IoArrowForwardCircle className="mx-2" />
-              </span>
+              {isSubmitting ? t("btn.sending") : t("btn.send")}
             </button>
+
+            {submitStatus === "success" && (
+              <p className="text-green-500 text-center mt-2">
+                Message sent successfully!
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="text-red-500 text-center mt-2">
+                Failed to send message. Please try again.
+              </p>
+            )}
+          </form>
+        </motion.div>
+
+        {/* Contact Info */}
+        <motion.div
+          className="w-full md:w-1/3 flex flex-col gap-8 font-cocon"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        >
+          <div className="bg-[#3C91BA]/5 p-8 rounded-3xl border border-[#3C91BA]/20">
+            <h3 className="text-2xl font-medium text-[#1E1E1E] mb-6">
+              {t("contact.info_title")}
+            </h3>
+
+            <div className="flex flex-col gap-6 text-[#1E1E1E]/80">
+              <div className="flex items-start gap-4 hover:text-[#3C91BA] transition-colors group cursor-pointer">
+                <div className="bg-white p-3 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                  <IoLocationSharp size={24} className="text-[#FAB548]" />
+                </div>
+                <div className="pt-1">
+                  <p className="font-semibold text-lg">Location</p>
+                  <p className="text-sm mt-1">{contactInfo.location}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 hover:text-[#3C91BA] transition-colors group cursor-pointer">
+                <div className="bg-white p-3 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                  <FaPhone size={22} className="text-[#FAB548]" />
+                </div>
+                <div className="pt-1">
+                  <p className="font-semibold text-lg">Phone</p>
+                  <div className="flex flex-col mt-1">
+                    {contactInfo.phones.map((phone, idx) => (
+                      <a
+                        key={idx}
+                        href={`tel:${phone.replace(/\s+/g, "")}`}
+                        className="text-sm hover:underline"
+                      >
+                        {phone}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 hover:text-[#3C91BA] transition-colors group cursor-pointer">
+                <div className="bg-white p-3 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                  <AiOutlineMail size={24} className="text-[#FAB548]" />
+                </div>
+                <div className="pt-1">
+                  <p className="font-semibold text-lg">Email</p>
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="text-sm mt-1 hover:underline block"
+                  >
+                    {contactInfo.email}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
-        <div className="bg-[#FFF1DC]/99 p-4 md:p-6 space-y-6">
-          <p className="text-[#1E1E1E]/50 text-2xl md:text-4xl font-cocon">
-            Contact Information
-          </p>
-          <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
-            <a href="#">
-              <IoLocationSharp size={20} color="#1E1E1E" />
-            </a>
-            <span className=" md:text-xl font-regular">
-              Norsken House, Kigali, RW
-            </span>
+
+          <div className="bg-[#FAB548]/10 p-8 rounded-3xl border border-[#FAB548]/20 flex flex-col items-center justify-center gap-4">
+            <h3 className="text-xl font-medium text-[#1E1E1E] mb-2">
+              Follow Us
+            </h3>
+            <div className="flex gap-6">
+              {socials.linkedin && (
+                <a
+                  href={socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-[#0077b5] transition-all text-[#1E1E1E]/70"
+                >
+                  <FaLinkedin size={24} />
+                </a>
+              )}
+              {socials.instagram && (
+                <a
+                  href={socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-[#E1306C] transition-all text-[#1E1E1E]/70"
+                >
+                  <FaInstagram size={24} />
+                </a>
+              )}
+              {socials.facebook && (
+                <a
+                  href={socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-[#1877F2] transition-all text-[#1E1E1E]/70"
+                >
+                  <FaFacebook size={24} />
+                </a>
+              )}
+              {socials.tiktok && (
+                <a
+                  href={socials.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-black transition-all text-[#1E1E1E]/70"
+                >
+                  <FaTiktok size={24} />
+                </a>
+              )}
+            </div>
           </div>
-          <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
-            <a href="#" target="_blank">
-              <AiOutlineMail size={20} color="#1E1E1E" />
-            </a>
-            <span className="md:text-xl font-regular">
-              skillseed@wekraft.co
-            </span>
-          </div>
-          <div className="flex items-center gap-2 font-bold text-[#1E1E1E]/60">
-            <a href="#">
-              <FaPhone size={20} color="#1E1E1E" />
-            </a>
-            <span className="md:text-xl font-regular">
-              +250793177089 / +250787161453
-            </span>
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </>
   );
 };
 

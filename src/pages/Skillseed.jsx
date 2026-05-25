@@ -14,8 +14,11 @@ import WhoWeAreBG from "../assets/whoWeAreBg.svg";
 import Gifted from "../assets/gifted.svg";
 import IconPerson from "../assets/price-icon-person.svg";
 import IconSchool from "../assets/price-icon-school.svg";
+import { useLanguage } from "../components/LanguageContext";
 
 const Skillseed = () => {
+  const { t } = useLanguage();
+
   const journeys = [
     {
       id: 1,
@@ -117,13 +120,13 @@ const Skillseed = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <p className="text-[#FFFFFF]/70 text-xl md:text-4xl font-cocon text-center md:text-left">
-            Welcome to Skillseed
+            {t("skillseed.welcome")}
           </p>
           <h1
             className="text-white font-primaryBold text-2xl md:text-5xl md:leading-[70px] text-center md:text-left uppercase font-nexa"
             style={{ textShadow: "2px 2px 2px #FAB548" }}
           >
-            We believe every child carries a seed of greatness
+            {t("skillseed.hero_title")}
           </h1>
           <div className="flex items-center gap-4">
             <a
@@ -137,7 +140,7 @@ const Skillseed = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
               >
-                Take Quiz
+                {t("btn.take_quiz")}
                 <span>
                   <IoArrowForwardCircle className="mx-2" />
                 </span>
@@ -154,7 +157,7 @@ const Skillseed = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
               >
-                Campaign
+                {t("btn.campaign")}
                 <span>
                   <IoArrowForwardCircle className="mx-2" />
                 </span>
@@ -175,18 +178,17 @@ const Skillseed = () => {
       {/* Core Offerings */}
       <div id="more" className="w-full bg-[#FFFBF7] p-4 md:p-10 ">
         <div className="my-6 text-[#1E1E1E]/50 font-nexa text-xl md:text-5xl text-center">
-          Our Core Offerings
+          {t("skillseed.core_title")}
         </div>
         {/* Core Offering 1 */}
         <div className="flex flex-col md:flex-row items-center justify-between 2xl:justify-around gap-4 2xl:gap-10">
           <div className="md:w-[500px] 2xl:w-[700px] space-y-4 font-cocon">
             <p className="text-[#3C91BA] text-2xl md:text-4xl text-center md:text-left">
-              Personalized Learning Journeys
+              {t("skillseed.journey_title")}
             </p>
             <img src={Core1} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              AI-powered paths that adapt to each child’s interests, strengths,
-              and dreams.
+              {t("skillseed.journey_desc")}
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4 md:gap-10 md:w-[50%]">
@@ -271,12 +273,11 @@ const Skillseed = () => {
 
           <div className=" md:w-[400px] 2xl:w-[700px] space-y-4 font-cocon py-6 md:py-0">
             <p className="text-[#3C91BA] text-2xl md:text-4xl text-center md:text-left">
-              Real World Career Exposure
+              {t("skillseed.exposure_title")}
             </p>
             <img src={Core2} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Direct interactions with professionals, workplaces, and mentors to
-              inspire future-ready choices.
+              {t("skillseed.exposure_desc")}
             </p>
           </div>
         </div>
@@ -284,12 +285,11 @@ const Skillseed = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 2xl:justify-around 2xl:gap-10 my-10">
           <div className="md:w-[500px] 2xl:w-[700px] space-y-4 font-cocon">
             <p className="text-[#3C91BA] text-2xl md:text-4xl text-center md:text-left">
-              Weekly Engagement Activities
+              {t("skillseed.engagement_title")}
             </p>
             <img src={Core3} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Fun, skill-building challenges that spark creativity, teamwork,
-              and resilience.
+              {t("skillseed.engagement_desc")}
             </p>
           </div>
           <div className="w-full flex flex-col items-center gap-5 md:gap-10 py-5 md:py-10">
@@ -364,12 +364,11 @@ const Skillseed = () => {
           </div>
           <div className="md:w-[500px] 2xl:w-[700px] space-y-4 font-cocon">
             <p className="text-[#3C91BA] text-2xl md:text-4xl text-center md:text-left">
-              Parents Support
+              {t("skillseed.parents_title")}
             </p>
             <img src={Core4} />
             <p className="text-[#1E1E1E]/60 md:text-xl">
-              Guidance and resources to help parents nurture growth and connect
-              learning at home.
+              {t("skillseed.parents_desc")}
             </p>
           </div>
         </div>
@@ -383,22 +382,21 @@ const Skillseed = () => {
       >
         <div className="w-full flex flex-col md:flex-row items-center justify-between relative z-[3] gap-4 md:gap-10 px-5 pt-20 pb-10 md:p-20 md:m-20">
           <div className="my-4 text-white font-nexa text-xl block md:hidden">
-            Offerings for Highly Gifted Children
+            {t("skillseed.gifted_title")}
           </div>
           <div>
             <img src={Gifted} />
           </div>
           <div className="flex flex-col items-center justify-center md:items-start gap-4">
             <div className="my-4 text-white font-nexa md:text-4xl hidden md:block">
-              Offerings for Highly Gifted Children
+              {t("skillseed.gifted_title")}
             </div>
             <div className="w-full md:w-[600px] bg-[#FFFFFF]/[85%] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[60%] text-sm md:text-xl my-4">
               <p className="text-[#1E1E1E]/80 text-xl md:text-3xl">
-                Accelerated Learning Tracks
+                {t("skillseed.accelerated_title")}
               </p>
               <p className="text-xs md:text-sm text-center pb-4">
-                Empowering advanced learners to excel beyond the standard
-                curriculum, these tracks offer:
+                {t("skillseed.accelerated_desc")}
               </p>
               <div className="grid gap-5">
                 {tracks.map((track, index) => (
@@ -417,36 +415,32 @@ const Skillseed = () => {
       {/* Pricing */}
       <div className="w-full bg-[#FFFBF7] p-4 md:p-10 flex flex-col items-center justify-center gap-5 md:gap-10">
         <div className=" text-[#1E1E1E]/50 font-nexa text-xl md:text-5xl">
-          Our Pricing
+          {t("skillseed.pricing_title")}
         </div>
         <div className="w-full flex flex-col md:flex-row items-stretch justify-center gap-5 md:gap-10 py-5 md:py-10">
           <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-[#3C91BA] p-4">
             <img src={IconPerson} className="w-10 md:w-20 h-10 md:h-20" />
             <p className="text-center font-nexa text-white text-xl md:text-3xl">
-              Individual
+              {t("skillseed.price_indiv_title")}
             </p>
             <p className="text-white font-cocon text-lg md:text-2xl">
-              $25/Monthly
+              {t("skillseed.price_indiv_desc")}
             </p>
           </div>
           <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-white border-2 border-dashed border-[#3C91BA] p-4">
             <img src={IconSchool} className="w-10 md:w-20 h-10 md:h-20" />
-            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-3xl">
-              School Package
-              <br /> Tier 1
+            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-3xl" dangerouslySetInnerHTML={{__html: t("skillseed.price_school1_title")}}>
             </div>
             <p className="text-[#3C91BA] font-cocon text-lg md:text-2xl">
-              $5/Child/Month
+              {t("skillseed.price_school1_desc")}
             </p>
           </div>
           <div className="w-full md:w-[400px] rounded-4xl flex flex-col items-center justify-center gap-3 md:gap-5 bg-white border-2 border-dashed border-[#3C91BA] p-4">
             <img src={IconSchool} className="w-10 md:w-20 h-10 md:h-20" />
-            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-3xl">
-              School Package
-              <br /> Tier 2
+            <div className="text-center font-nexa text-[#FAB548] text-xl md:text-3xl" dangerouslySetInnerHTML={{__html: t("skillseed.price_school2_title")}}>
             </div>
             <p className="text-[#3C91BA] font-cocon text-lg md:text-2xl">
-              $10/Child/Month
+              {t("skillseed.price_school2_desc")}
             </p>
           </div>
         </div>
