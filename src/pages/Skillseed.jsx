@@ -17,7 +17,7 @@ import IconSchool from "../assets/price-icon-school.svg";
 import { useLanguage } from "../components/LanguageContext";
 
 const Skillseed = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const journeys = [
     {
@@ -130,7 +130,7 @@ const Skillseed = () => {
           </h1>
           <div className="flex items-center gap-4">
             <a
-              href="https://quiz.wekraft.co/"
+              href={`https://quiz.wekraft.co/?lang=${language}`}
               target="_blank"
               className="flex items-center justify-center md:justify-start"
             >
