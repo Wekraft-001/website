@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import knowledge from "../data/websiteKnowledge.json";
+import { useLanguage } from "./LanguageContext";
 
 const Chatbot = () => {
   const [isHovered, setIsHovered] = useState(false);
   const whatsappNumber = knowledge.contact.whatsapp.replace(/[^0-9]/g, "");
+  const { t } = useLanguage();
 
   return (
     <div className="fixed bottom-5 right-5 md:right-10 z-[60] flex items-center gap-3">
@@ -18,7 +20,7 @@ const Chatbot = () => {
             exit={{ opacity: 0, x: 20, scale: 0.8 }}
             className="bg-white text-[#1E1E1E] px-4 py-2 rounded-2xl shadow-xl border border-gray-100 font-cocon text-sm font-semibold whitespace-nowrap hidden sm:block"
           >
-            Chat with us! 💬
+            {t("chat.tooltip")}
           </motion.div>
         )}
       </AnimatePresence>

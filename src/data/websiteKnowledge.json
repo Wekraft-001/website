@@ -37,56 +37,136 @@
     "address": "Norrsken House, Kigali, RW",
     "whatsapp": "+254716564553"
   },
-  "faqs": [
+  "faq": [
     {
       "id": "faq_1",
-      "question": "What exactly is Wekraft?",
-      "answer": "Wekraft Limited is a pioneering educational technology company based in Rwanda. We specialize in creating curriculum-aligned toolkits and programs that make learning more immersive, practical, and fun for children across Africa."
+      "question": {
+        "en": "What exactly is Wekraft?",
+        "fr": "Qu'est-ce que Wekraft exactement ?",
+        "rw": "Wekraft ni iki by'umwihariko?"
+      },
+      "answer": {
+        "en": "Wekraft Limited is a pioneering educational technology company based in Rwanda. We specialize in creating curriculum-aligned toolkits and programs that make learning more immersive, practical, and fun for children across Africa.",
+        "fr": "Wekraft Limited est une entreprise pionnière de technologie éducative basée au Rwanda. Nous sommes spécialisés dans la création de kits d'outils et de programmes alignés sur le curriculum qui rendent l'apprentissage plus immersif, pratique et amusant pour les enfants à travers l'Afrique.",
+        "rw": "Wekraft Limited ni ikigo cy'ikoranabuhanga mu by'uburezi gikorera mu Rwanda. Twibanda ku gukora ibikoresho n'amasomo bihuye n'integanyanyigisho, bifasha abana bo muri Afurika kwiga mu buryo bufatika, bushishikaje kandi bushimishije."
+      }
     },
     {
       "id": "faq_2",
-      "question": "What is SkillSeed?",
-      "answer": "SkillSeed is our flagship AI-powered platform for children aged 6–18. It helps them explore their interests early, build future-ready skills, and connect with mentors who open doors to real-world career opportunities."
+      "question": {
+        "en": "What is SkillSeed?",
+        "fr": "Qu'est-ce que SkillSeed ?",
+        "rw": "SkillSeed ni iki?"
+      },
+      "answer": {
+        "en": "SkillSeed is our flagship AI-powered platform for children aged 6–18. It helps them explore their interests early, build future-ready skills, and connect with mentors who open doors to real-world career opportunities.",
+        "fr": "SkillSeed est notre plateforme phare propulsée par l'IA pour les enfants âgés de 6 à 18 ans. Elle les aide à explorer leurs intérêts dès leur plus jeune âge, à développer des compétences pour l'avenir, et à se connecter avec des mentors qui ouvrent la porte à des opportunités de carrière concrètes.",
+        "rw": "SkillSeed ni urubuga rwacu rwa AI rugenewe abana bafite imyaka 6 kugeza 18. Rubafasha kuvumbura hakiri kare ibyo bakunda, kubaka ubumenyi bw'ejo hazaza, no guhuzwa n'abajyanama babaha amahirwe mu by'imirimo itandukanye."
+      }
     },
     {
       "id": "faq_3",
-      "question": "How does SkillSeed use Artificial Intelligence?",
-      "answer": "We use AI to personalize every child's journey. The platform identifies a learner's strengths and interests through assessments, then curates tailored challenges, books, and mentor connections specific to their unique growth path."
+      "question": {
+        "en": "How does SkillSeed use Artificial Intelligence?",
+        "fr": "Comment SkillSeed utilise-t-elle l'Intelligence Artificielle ?",
+        "rw": "Ese SkillSeed ikoresha gute ikoranabuhanga rya AI?"
+      },
+      "answer": {
+        "en": "We use AI to personalize every child's journey. The platform identifies a learner's strengths and interests through assessments, then curates tailored challenges, books, and mentor connections specific to their unique growth path.",
+        "fr": "Nous utilisons l'IA pour personnaliser le parcours de chaque enfant. La plateforme identifie les forces et les intérêts de l'apprenant grâce à des évaluations, puis organise des défis sur mesure, des lectures et des connexions avec des mentors spécifiques à leur parcours de croissance unique.",
+        "rw": "Dukoresha AI kugira ngo dutegure urugendo rwihariye kuri buri mwana. Urubuga rumenya ibyo umwana ashoboye n'ibyo akunda binyuze mu isuzuma, maze rukamuhitiramo imikino, ibitabo n'abajyanama bijyanye n'inzira ye y'iterambere."
+      }
     },
     {
       "id": "faq_4",
-      "question": "How do your 'Tailored Learning Kits' work?",
-      "answer": "Our toolkits are curated sets of educational materials that follow national curricula. They turn learning into a hands-on experience, allowing children to experiments and build projects instead of just reading from textbooks."
+      "question": {
+        "en": "How do your 'Tailored Learning Kits' work?",
+        "fr": "Comment fonctionnent vos 'Kits d'Apprentissage sur Mesure' ?",
+        "rw": "Ese 'Ibikoresho Bigenewe Umwana' byanyu bikora gute?"
+      },
+      "answer": {
+        "en": "Our toolkits are curated sets of educational materials that follow national curricula. They turn learning into a hands-on experience, allowing children to experiments and build projects instead of just reading from textbooks.",
+        "fr": "Nos kits d'outils sont des ensembles de matériel éducatif soigneusement sélectionnés qui suivent les programmes nationaux. Ils transforment l'apprentissage en une expérience pratique, permettant aux enfants d'expérimenter et de construire des projets au lieu de simplement lire dans des manuels.",
+        "rw": "Ibikoresho byacu byakusanyijwe hagendewe ku nteganyanyigisho z'igihugu. Bituma kwiga biba igikorwa gifatika, bikanaha abana amahirwe yo gukora igerageza no kubaka imishinga aho gusoma gusa mu bitabo."
+      }
     },
     {
       "id": "faq_5",
-      "question": "What makes the Wekraft approach unique?",
-      "answer": "Unlike traditional systems focused on exam-centric memorization, we focus on talent discovery. We bridge the gap between curiosity and career by combining AI-driven profiling with real-world mentorship and hands-on toolkits."
+      "question": {
+        "en": "What makes the Wekraft approach unique?",
+        "fr": "Qu'est-ce qui rend l'approche de Wekraft unique ?",
+        "rw": "Ni iki gituma imikorere ya Wekraft yihariye?"
+      },
+      "answer": {
+        "en": "Unlike traditional systems focused on exam-centric memorization, we focus on talent discovery. We bridge the gap between curiosity and career by combining AI-driven profiling with real-world mentorship and hands-on toolkits.",
+        "fr": "Contrairement aux systèmes traditionnels axés sur la mémorisation pour les examens, nous nous concentrons sur la découverte des talents. Nous comblons le fossé entre curiosité et carrière en combinant le profilage via l'IA avec du mentorat réel et des kits pratiques.",
+        "rw": "Mu gihe imyigire isanzwe yibanda cyane ku gufata mu mutwe no gukora ibizamini, twe twibanda ku kuvumbura impano. Duhuza amatsiko y'umwana n'umurimo akoresheje AI, abajyanama ndetse n'ibikoresho bifatika."
+      }
     },
     {
       "id": "faq_6",
-      "question": "Who can benefit from Wekraft and SkillSeed?",
-      "answer": "We serve children aged 6-18, parents wanting structured guidance for their child's future, and schools/educators looking for innovative ways to integrate future-of-work readiness into their curriculum."
+      "question": {
+        "en": "Who can benefit from Wekraft and SkillSeed?",
+        "fr": "Qui peut bénéficier de Wekraft et SkillSeed ?",
+        "rw": "Ni ba nde Wekraft na SkillSeed bigenewe?"
+      },
+      "answer": {
+        "en": "We serve children aged 6-18, parents wanting structured guidance for their child's future, and schools/educators looking for innovative ways to integrate future-of-work readiness into their curriculum.",
+        "fr": "Nous accompagnons les enfants de 6 à 18 ans, les parents souhaitant des conseils structurés pour l'avenir de leur enfant, et les écoles/éducateurs cherchant des moyens innovants d'intégrer la préparation au monde du travail dans leur curriculum.",
+        "rw": "Dukorera abana bari hagati y'imyaka 6 na 18, ababyeyi bifuza kumenya neza inzira z'ejo hazaza z'abana babo, ndetse n'amashuri ashaka uburyo bushya bwo gufasha abanyeshuri kwitegura imirimo y'ejo hazaza."
+      }
     },
     {
       "id": "faq_7",
-      "question": "Are your products available outside of Rwanda?",
-      "answer": "Yes! While we are headquartered at Norrsken House in Kigali, we have already reached hundreds of learners across Kenya and are expanding into Tanzania and the broader East African region."
+      "question": {
+        "en": "Are your products available outside of Rwanda?",
+        "fr": "Vos produits sont-ils disponibles en dehors du Rwanda ?",
+        "rw": "Ese ibyo mukora biboneka no hanze y'u Rwanda?"
+      },
+      "answer": {
+        "en": "Yes! While we are headquartered at Norrsken House in Kigali, we have already reached hundreds of learners across Kenya and are expanding into Tanzania and the broader East African region.",
+        "fr": "Oui ! Bien que notre siège social soit à Norrsken House à Kigali, nous avons déjà touché des centaines d'apprenants au Kenya et nous nous développons en Tanzanie et dans la région de l'Afrique de l'Est.",
+        "rw": "Yego! Nubwo icyicaro cyacu kiri muri Norrsken House, Kigali, twamaze kugera ku banyeshuri amagana muri Kenya kandi turi kwagurira ibikorwa byacu muri Tanzaniya n'akarere k'Afurika y'Iburasirazuba."
+      }
     },
     {
       "id": "faq_8",
-      "question": "What has Wekraft achieved so far?",
-      "answer": "In under two years, we've reached over 600 learners, partnered with 10+ schools, and were named African Regional Winners at the 2025 AIM Summit Challenge in Abu Dhabi."
+      "question": {
+        "en": "What has Wekraft achieved so far?",
+        "fr": "Qu'a accompli Wekraft jusqu'à présent ?",
+        "rw": "Wekraft imaze kugeraho iki kugeza ubu?"
+      },
+      "answer": {
+        "en": "In under two years, we've reached over 600 learners, partnered with 10+ schools, and were named African Regional Winners at the 2025 AIM Summit Challenge in Abu Dhabi.",
+        "fr": "En moins de deux ans, nous avons touché plus de 600 apprenants, établi des partenariats avec plus de 10 écoles, et avons été nommés Lauréats Régionaux Africains lors de l'AIM Summit Challenge 2025 à Abu Dhabi.",
+        "rw": "Mu gihe kitageze ku myaka ibiri, twageze ku banyeshuri basaga 600, dukorana n'amashuri arenga 10, kandi twabaye aba mbere mu karere k'Afurika mw'ihushanwa rya AIM Summit ryo mu 2025 i Abu Dhabi."
+      }
     },
     {
       "id": "faq_9",
-      "question": "Does Wekraft have a social mission?",
-      "answer": "Yes! We operate with a 'one-for-one' social model where every paid subscription helps us provide subsidized access to children from low-income households, ensuring that technology-driven discovery is inclusive."
+      "question": {
+        "en": "Does Wekraft have a social mission?",
+        "fr": "Wekraft a-t-elle une mission sociale ?",
+        "rw": "Ese Wekraft ifite intego zishingiye ku mibereho myiza?"
+      },
+      "answer": {
+        "en": "Yes! We operate with a 'one-for-one' social model where every paid subscription helps us provide subsidized access to children from low-income households, ensuring that technology-driven discovery is inclusive.",
+        "fr": "Oui ! Nous opérons avec un modèle social 'un pour un' où chaque abonnement payant nous aide à fournir un accès subventionné aux enfants de ménages à faible revenu, garantissant que la découverte par la technologie soit inclusive.",
+        "rw": "Yego! Dukora dushingiye kuri gahunda ya 'umwe kuri umwe' aho buri kwiyandikisha kwishyuriwe, bidufasha kugeza ibi bikoresho no ku bana baturuka mu miryango ikennye, tukizera ko ikoranabuhanga ryo kuvumbura rigera kuri bose."
+      }
     },
     {
       "id": "faq_10",
-      "question": "How can I get started or partner with you?",
-      "answer": "You can sign up directly via our website, or reach out to us at skillseed@wekraft.co. We are always looking for mentors, partner schools, and CSR-driven organizations to join our mission."
+      "question": {
+        "en": "How can I get started or partner with you?",
+        "fr": "Comment puis-je commencer ou devenir partenaire avec vous ?",
+        "rw": "Nakangira gute cyangwa nakorana namwe nte?"
+      },
+      "answer": {
+        "en": "You can sign up directly via our website, or reach out to us at skillseed@wekraft.co. We are always looking for mentors, partner schools, and CSR-driven organizations to join our mission.",
+        "fr": "Vous pouvez vous inscrire directement sur notre site web ou nous contacter à skillseed@wekraft.co. Nous sommes toujours à la recherche de mentors, d'écoles partenaires et d'organisations axées sur la RSE pour rejoindre notre mission.",
+        "rw": "Ushobora kwiyandikisha unyuze ku rubuga rwacu, cyangwa ukatwandikira kuri skillseed@wekraft.co. Guhora dushaka abajyanama, amashuri y'abafatanyabikorwa, hamwe n'imiryango yita ku mibereho myiza (CSR) ngo yifatanye natwe."
+      }
     }
   ],
   "full_intelligence": "Wekraft Ltd is an education technology company on a mission to transform how children across Africa learn, discover themselves, and prepare for the future of work. We began with in-person programmes and STEM toolkits designed to foster a love of learning through hands-on exploration. SkillSeed bridges the critical gap between classroom learning and real-world skills. It helps children aged 6–18 discover their interests and passions early by creating personalised learner profiles, curating tailored content, and connecting them to mentors and career discovery opportunities. Traction so far: reached over 600 children in Kenya and Rwanda. African Regional Winners at the AIM Summit Challenge in Abu Dhabi (2025). Supported by JASIRI, BPN Rwanda, and Norrsken."

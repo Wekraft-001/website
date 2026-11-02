@@ -5,8 +5,11 @@ import { FaLinkedin, FaFacebook, FaTiktok } from "react-icons/fa";
 import { FaPhone, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { IoLocationSharp } from "react-icons/io5";
 import { AiOutlineMail } from "react-icons/ai";
+import { useLanguage } from "./LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <div className="hidden w-full h-full md:flex flex-col items-center justify-center p-4 md:px-10 bg-[#3C91BA]/10">
@@ -15,22 +18,20 @@ const Footer = () => {
           {/* a */}
           <div className="flex flex-col items-center">
             <img src={Logo} alt="Wekraft Logo" className="w-[168px]" />
-            <div className="mt-2 text-[#3C91BA] font-cocon">
-              Empower minds and <br />
-              inspire futures.
+            <div className="mt-2 text-[#3C91BA] font-cocon text-center" dangerouslySetInnerHTML={{__html: t("footer.empower")}}>
             </div>
           </div>
           {/* b */}
           <div className="grid text-[#1E1E1E]/80 font-cocon">
-            <div className="font-medium text-xl">Quick Links</div>
-            <Link to="/">Home</Link>
-            <Link to="/about-us">About</Link>
-            <Link to="/our-toolkit">Toolkit</Link>
-            <Link to="/skillseed">Skillseed</Link>
+            <div className="font-medium text-xl">{t("footer.quick_links")}</div>
+            <Link to="/">{t("nav.home")}</Link>
+            <Link to="/about-us">{t("nav.about")}</Link>
+            <Link to="/our-toolkit">{t("nav.toolkit")}</Link>
+            <Link to="/skillseed">{t("nav.skillseed")}</Link>
           </div>
           {/* c */}
           <div className="grid text-[#1E1E1E]/80 font-cocon">
-            <div className="font-medium text-xl">Social Media</div>
+            <div className="font-medium text-xl">{t("footer.socials")}</div>
             <div className="flex items-center space-x-4">
               <a
                 href="https://www.linkedin.com/company/wekraft-ltd/"
@@ -53,7 +54,7 @@ const Footer = () => {
           </div>
           {/* d */}
           <div className="grid text-[#1E1E1E]/80">
-            <div className="font-medium text-xl font-cocon">Contact</div>
+            <div className="font-medium text-xl font-cocon">{t("footer.contact")}</div>
             <div className="flex items-center gap-2">
               <a href="#">
                 <IoLocationSharp size={20} color="#1E1E1E" />
@@ -87,15 +88,13 @@ const Footer = () => {
           {/* 1 */}
           <div className="flex flex-col">
             <img src={Logo} alt="Wekraft Logo" className="w-20" />
-            <div className="text-xs mt-2 text-[#3C91BA] font-cocon">
-              Empower minds and <br />
-              inspire futures.
+            <div className="text-xs mt-2 text-[#3C91BA] font-cocon" dangerouslySetInnerHTML={{__html: t("footer.empower")}}>
             </div>
           </div>
 
           {/* 2 */}
           <div className="grid gap-4 text-[#1E1E1E]/80 font-cocon">
-            <div className="font-medium text-lg">Social Media</div>
+            <div className="font-medium text-lg">{t("footer.socials")}</div>
             <div className="flex items-center gap-4">
               <a
                 href="https://www.linkedin.com/company/wekraft-ltd/"
@@ -116,7 +115,7 @@ const Footer = () => {
           </div>
           {/* 3 */}
           <div className="grid gap-3 text-[#1E1E1E]/80">
-            <div className="font-medium text-lg font-cocon">Contact</div>
+            <div className="font-medium text-lg font-cocon">{t("footer.contact")}</div>
             <div className="flex items-center gap-2">
               <a href="#">
                 <IoLocationSharp size={15} color="#1E1E1E" />

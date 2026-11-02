@@ -28,29 +28,32 @@ import CMU from "../assets/partners/cmu-africa-logo.svg";
 import AA from "../assets/partners/Accelerate-Africa-logo.svg";
 import BPN from "../assets/partners/BPN-logo.svg";
 import FAQ from "../components/FAQ";
+import { useLanguage } from "../components/LanguageContext";
 
 
 const Home = () => {
+  const { t } = useLanguage();
+
   const stats = [
     {
       icon: Icon1,
-      text: "We turn classrooms and homes into hubs of discovery with hands-on learning experiences.",
+      text: t("home.how_we_do_it_1"),
     },
     {
       icon: Icon2,
-      text: "From creativity to critical thinking, we nurture competencies Africa needs for tomorrow.",
+      text: t("home.how_we_do_it_2"),
     },
     {
       icon: Icon3,
-      text: "We bridge education with real-world careers, helping children see possibilities beyond exams.",
+      text: t("home.how_we_do_it_3"),
     },
     {
       icon: Icon4,
-      text: "We equip adults with tools to nurture purpose-driven learners.",
+      text: t("home.how_we_do_it_4"),
     },
     {
       icon: Icon5,
-      text: "Through partnerships and CSR, we ensure underserved children aren't left behind.",
+      text: t("home.how_we_do_it_5"),
     },
   ];
   return (
@@ -75,12 +78,10 @@ const Home = () => {
           <p
             className="text-3xl md:text-6xl font-primarySemibold text-gray-200 md:w-[777px] mb-2 text-center uppercase font-nexa"
             style={{ textShadow: "2px 2px 2px #FAB548" }}
+            dangerouslySetInnerHTML={{__html: t("home.hero_title")}}
           >
-            we empower minds <br /> and inspire futures
           </p>
-          <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon">
-            Every child deserves to discover who they are, what they love,
-            <br /> and how they can thrive in tomorrow's world.
+          <p className="md:text-2xl font-primaryRegular text-gray-100 text-center font-cocon" dangerouslySetInnerHTML={{__html: t("home.hero_subtitle")}}>
           </p>
           <a
             href="https://parents.wekraft.co/signup"
@@ -90,7 +91,7 @@ const Home = () => {
               // onClick={() => handleBecomeMemberClick()}
               className="w-[202px] h-[48px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] rounded-full my-4 uppercase flex items-center justify-center text-sm md:text-base font-cocon cursor-pointer"
             >
-              Sign up with us{" "}
+              {t("btn.signup")}{" "}
               <span>
                 <IoArrowForwardCircle className="mx-2" />
               </span>
@@ -101,16 +102,14 @@ const Home = () => {
       {/* Mission & Vision */}
       <div className="w-full flex flex-col items-center justify-center py-10 bg-[#FFFBF7]">
         <div className="text-[#1E1E1E]/50 text-xl md:text-5xl font-nexa">
-          Our Mission and Vision
+          {t("home.mission_vision_title")}
         </div>
         <div className="relative flex flex-col md:flex-row items-center gap-4 my-10 md:my-20">
           {/* Mission Card */}
           <div className="relative p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65">
-            <h3 className="text-xl font-semibold mb-2">Mission</h3>
+            <h3 className="text-xl font-semibold mb-2">{t("home.mission_title")}</h3>
             <p className="text-xs md:text-sm">
-              To spark confidence, creativity, and curiosity in every child by
-              equipping them with tools, exposure, and mentorship that connect
-              learning to life.
+              {t("home.mission_desc")}
             </p>
             {/* Decorative Bubble */}
             <div className="absolute top-[160px] md:top-[210px] -left-10 md:-left-20 bg-[#3C91BA] rounded-full w-24 h-24"></div>
@@ -125,12 +124,9 @@ const Home = () => {
 
           {/* Vision Card */}
           <div className="relative bg-white p-6 md:p-8 rounded-2xl shadow-xl shadow-[#FAB548]/25 border border-dashed border-[#3C91BA] w-72 md:w-[300px] font-cocon text-[#1E1E1E]/65 rotate-">
-            <h3 className="text-xl font-semibold mb-2">Vision</h3>
+            <h3 className="text-xl font-semibold mb-2">{t("home.vision_title")}</h3>
             <p className="text-xs md:text-sm">
-              A future where every child across Africa is prepared to dream
-              boldly, think critically, and grow into innovative, compassionate
-              leaders with parents, schools, and communities walking alongside
-              them.
+              {t("home.vision_desc")}
             </p>
             {/* Decorative Bubble */}
             <div className="absolute -top-[110px] md:-top-[100px] -right-10 md:-right-20 bg-yellow-300 rounded-full w-24 h-24"></div>
@@ -151,16 +147,9 @@ const Home = () => {
           </div>
           <div className="flex flex-col items-center justify-center md:items-start gap-4">
             <div className="my-4 text-white font-nexa text-xl md:text-5xl">
-              Who We Are
+              {t("home.who_we_are_title")}
             </div>
-            <div className="w-full md:w-[600px] bg-[#FFFFFF]/[85%] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[60%] text-sm md:text-xl">
-              WeKraft Limited is a pioneering EdTech company based in Rwanda,
-              dedicated to bridging the gap between classroom learning and
-              real-world opportunities.
-              <br />
-              <br />
-              From hands-on toolkits to our AI-powered SkillSeed platform, we
-              make learning relevant, practical, and life-shaping.
+            <div className="w-full md:w-[600px] bg-[#FFFFFF]/[85%] rounded-4xl p-6 font-cocon text-[#1E1E1E]/[60%] text-sm md:text-xl" dangerouslySetInnerHTML={{__html: t("home.who_we_are_desc")}}>
             </div>
             <Link
               to="/about-us"
@@ -168,7 +157,7 @@ const Home = () => {
             >
               <div className="w-[100px] md:w-[150px] h-10 md:h-[68px] text-center border border-white rounded-full text-white md:text-xl uppercase font-cocon flex items-center justify-center">
                 {" "}
-                See More
+                {t("btn.see_more")}
               </div>
             </Link>
           </div>
@@ -182,7 +171,7 @@ const Home = () => {
         }}
       >
         <div className="my-4 text-white font-nexa text-2xl md:text-5xl">
-          What We Offer
+          {t("home.what_we_offer_title")}
         </div>
         <div className="w-full flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 py-5 md:py-10">
           <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-[#FAB548] border-2 border-dashed border-white">
@@ -196,10 +185,7 @@ const Home = () => {
               color="#E18C03"
               className="block md:hidden"
             />
-            <div className="text-center font-cocon text-white text-xl md:text-4xl">
-              Immersive
-              <br />
-              Learning
+            <div className="text-center font-cocon text-white text-xl md:text-4xl" dangerouslySetInnerHTML={{__html: t("home.offer_1")}}>
             </div>
           </div>
           <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
@@ -213,9 +199,7 @@ const Home = () => {
               color="#3C91BA"
               className="block md:hidden"
             />
-            <div className="text-center font-cocon text-[#FAB548] text-xl md:text-4xl">
-              Tailored Learning <br />
-              kit
+            <div className="text-center font-cocon text-[#FAB548] text-xl md:text-4xl" dangerouslySetInnerHTML={{__html: t("home.offer_2")}}>
             </div>
           </div>
           <div className="w-full md:w-[400px] h-[148px] md:h-[250px] rounded-4xl flex flex-col items-center justify-center gap-5 bg-white border-2 border-dashed border-[#3C91BA]">
@@ -229,9 +213,7 @@ const Home = () => {
               color="#FAB548"
               className="block md:hidden"
             />
-            <div className="text-center font-cocon text-[#3C91BA] text-xl md:text-4xl">
-              Ready Skills <br />
-              Inspiration
+            <div className="text-center font-cocon text-[#3C91BA] text-xl md:text-4xl" dangerouslySetInnerHTML={{__html: t("home.offer_3")}}>
             </div>
           </div>
         </div>
@@ -261,50 +243,46 @@ const Home = () => {
             <div className="absolute top-6 left-1/2 transform -translate-x-1/2 -translate-y-full w-50 p-3 flex flex-col items-center">
               <img src={Icon1} alt="Content" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                We turn classrooms and homes into hubs of discovery with
-                hands-on learning experiences.
+                {t("home.how_we_do_it_1")}
               </p>
             </div>
             {/* Right stat */}
             <div className="absolute top-1/2 right-0 transform translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon3} alt="Partners" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                We bridge education with real-world careers, helping children
-                see possibilities beyond exams.
+                {t("home.how_we_do_it_3")}
               </p>
             </div>
             {/* Left stat */}
             <div className="absolute top-1/2 left-0 transform -translate-x-full -translate-y-1/2 w-50 p-3 flex flex-col items-center">
               <img src={Icon2} alt="Expansion" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                From creativity to critical thinking, we nurture competencies
-                Africa needs for tomorrow.
+                {t("home.how_we_do_it_2")}
               </p>
             </div>
             {/* Bottom stat right */}
             <div className="absolute -bottom-4 left-full right-10 transform -translate-x-1/2 translate-y-full w-50 p-3 flex flex-col items-center">
               <img src={Icon5} alt="Impact" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                Through partnerships and CSR, we ensure underserved children
-                aren’t left behind.
+                {t("home.how_we_do_it_5")}
               </p>
             </div>{" "}
             {/* Bottom stat left */}
             <div className="absolute -bottom-0 left-10 right-1/2 transform translate-y-full -translate-x-full w-50 p-3 flex flex-col items-center">
               <img src={Icon4} alt="Engagement" className="w-[140px] mb-2" />
               <p className="text-sm text-center text-[#1E1E1E]/40 font-cocon">
-                We equip adults with tools to nurture purpose-driven learners.
+                {t("home.how_we_do_it_4")}
               </p>
             </div>
           </div>
         </div>
         {/* Mobile View For Stats */}
         <div className="my-4 text-[#3C91BA] font-nexa text-2xl block md:hidden">
-          How We Do It
+          {t("home.how_we_do_it_title")}
         </div>
         <div className="grid grid-cols-3 md:hidden">
-          {stats.map((stat) => (
-            <div className="w-full p-3 flex flex-col items-center">
+          {stats.map((stat, i) => (
+            <div key={i} className="w-full p-3 flex flex-col items-center">
               <img src={stat.icon} alt="Content" className="w-full mb-2" />
               <p className="text-xs text-center text-[#1E1E1E]/40 font-cocon">
                 {stat.text}
@@ -317,7 +295,7 @@ const Home = () => {
           target="_blank"
         >
           <button className="w-[202px] h-[48px] text-white font-primarySemibold md:font-primaryMedium bg-[#FAB548] hover:bg-[#f89f2e] rounded-full shadow-md my-6 uppercase flex items-center justify-center text-sm md:text-base duration-300 hover:scale-105 font-cocon">
-            Sign up with us{" "}
+            {t("btn.signup")}{" "}
             <span>
               <IoArrowForwardCircle className="mx-2" />
             </span>
@@ -336,50 +314,36 @@ const Home = () => {
             <img src={UniqueApproach} />
           </div>
           <div className="flex flex-col items-center justify-center md:items-start gap-4">
-            <div className="text-white font-nexa text-2xl md:text-5xl text-center md:text-left">
-              Our Unique Educational <br />
-              Approach
+            <div className="text-white font-nexa text-2xl md:text-5xl text-center md:text-left" dangerouslySetInnerHTML={{__html: t("home.unique_approach_title")}}>
             </div>
             <p className="font-medium font-cocon text-[#FFFFFF]/75 text-center md:text-left">
-              Central to WeKraft’s educational approach is nurturing, measuring,
-              and tracking seven types of intelligence in children
+              {t("home.unique_approach_desc")}
             </p>
             <div className="w-full grid items-center justify-center gap-4 md:gap-20 p-4">
               <div className="grid grid-cols-4 gap-4 md:gap-20">
                 <div className="w-full md:w-[140px] h-[70px]"></div>
-                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FAB548] shadow-[#FAB548] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm p-1">
-                  logical-
-                  <br className="hidden md:block" /> mathematics
+                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FAB548] shadow-[#FAB548] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm p-1" dangerouslySetInnerHTML={{__html: t("home.intel_logical")}}>
                 </div>
                 <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#FFFCFB] shadow-[#FAB548]/25 text-[#3C91BA] flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
-                  Linguistic
+                  {t("home.intel_linguistic")}
                 </div>
                 <div className="w-full md:w-[140px] h-[70px]"></div>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div className="w-full md:w-[150px] h-[70px] rounded-[60px] shadow-2xl bg-[#3C91BA] shadow-[#FAB548]/25 text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
-                  Spatial
+                  {t("home.intel_spatial")}
                 </div>
                 <div className="w-full md:w-[150px] h-[70px] rounded-[60px] shadow-2xl bg-[#FFFCFB] shadow-[#FAB548]/25 text-[#3C91BA] flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
-                  Naturalistic
+                  {t("home.intel_naturalistic")}
                 </div>
-                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#F7CA57] shadow-[#F7CA57] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
-                  Inter-
-                  <br />
-                  personal
+                <div className="w-full md:w-[150px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#F7CA57] shadow-[#F7CA57] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm" dangerouslySetInnerHTML={{__html: t("home.intel_interpersonal")}}>
                 </div>
               </div>
               <div className="grid grid-cols-4 gap-4 md:gap-20">
                 <div className="w-full md:w-[140px] h-[70px]"></div>
-                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#C85415] shadow-[#C85415] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
-                  Intra-
-                  <br />
-                  personal
+                <div className="w-full md:w-[140px] h-[70px] rounded-[30px] md:rounded-[60px] shadow-2xl bg-[#C85415] shadow-[#C85415] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm" dangerouslySetInnerHTML={{__html: t("home.intel_intrapersonal")}}>
                 </div>
-                <div className="w-full md:w-[140px] h-[70px] rounded-[35px] md:rounded-[60px] shadow-2xl bg-[#5BC4F6] shadow-[#5BC4F6] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm">
-                  Bodily-
-                  <br />
-                  kinesthetic
+                <div className="w-full md:w-[140px] h-[70px] rounded-[35px] md:rounded-[60px] shadow-2xl bg-[#5BC4F6] shadow-[#5BC4F6] text-white flex items-center justify-center text-center font-cocon text-[9.5px] md:text-sm" dangerouslySetInnerHTML={{__html: t("home.intel_bodily")}}>
                 </div>
                 <div className="w-full md:w-[140px] h-[70px]"></div>
               </div>
@@ -393,7 +357,7 @@ const Home = () => {
           <div className="w-full flex md:flex-col-reverse items-center gap-5 md:gap-10">
             <img src={Star2} className="w-[60px] md:w-[125px]" />
             <div className="text-[#1E1E1E]/50 font-nexa text-2xl md:text-4xl md:leading-10">
-              See What Our Clients Are Saying
+              {t("home.testimonials_title")}
             </div>
           </div>
         </div>
@@ -409,7 +373,7 @@ const Home = () => {
         <div className="w-full flex items-center justify-center gap-5 md:gap-10">
           <img src={Star} className="w-20 md:w-[150px]" />
           <div className="text-[#1E1E1E]/50 font-nexa text-2xl md:text-5xl">
-            We Are Not Alone
+            {t("home.partners_title")}
           </div>
         </div>
         <div className="flex flex-col gap-10 md:p-10 my-4">
