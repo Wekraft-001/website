@@ -40,11 +40,11 @@ const About = () => {
       name: "Agnes Wambui",
       title: "COO & Co-founder",
     },
-    {
-      image: Juliet,
-      name: "Juliet Kelechi",
-      title: "CTO",
-    },
+    // {
+    //   image: Juliet,
+    //   name: "Juliet Kelechi",
+    //   title: "CTO",
+    // },
     {
       image: John,
       name: "John Bosco Kalisa",
