@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Toolkit from "./pages/Toolkit";
 import Skillseed from "./pages/Skillseed";
 import Contact from "./pages/Contact";
+import Outreach from "./pages/Outreach";
 
 const AppRoute = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoute = () => {
           <Route path="/our-toolkit" element={<Toolkit />} />
           <Route path="/skillseed" element={<Skillseed />} />
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/outreach" element={<Outreach />} />
         </Routes>
       </Layout>
     </>

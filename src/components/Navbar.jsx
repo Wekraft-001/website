@@ -95,13 +95,22 @@ const Navbar = () => {
         >
           {t("nav.contact")}
         </NavLink>
-        <a
+        {/* <a
           href="https://outreach.wekraft.co/"
           target="_blank"
           className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
         >
           {t("nav.outreach")}
         </a>
+          Outreach
+        </a> */}
+         <NavLink
+          to="/outreach"
+          style={activeStyle}
+          className="p-2 hover:font-primaryBold hover:bg-[#3C91BA]/[50%] transition duration-200"
+        >
+          Outreach
+        </NavLink>
       </nav>
       
       <div className="hidden md:flex items-center gap-4">

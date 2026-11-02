@@ -9,28 +9,39 @@ import knowledge from "../data/websiteKnowledge.json";
 import { useLanguage } from "../components/LanguageContext";
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const apiUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     question: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
-  const contactInfo = knowledge.contact;
-  const socials = knowledge.socials;
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null,
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+
+    if (!formData.firstName || !formData.email || !formData.question) {
+      setStatus({
+        loading: false,
+        success: false,
+        error:
+          "Please fill in all required fields (First name, Email, and Question).",
+      });
+      return;
+    }
 
     const emailBody = `
       Name: ${formData.firstName} ${formData.lastName}
@@ -42,20 +53,37 @@ const Contact = () => {
     `;
 
     try {
-      // In a real application, you'd send this to your backend
-      // For now, we'll open the user's email client
-      window.location.href = `mailto:${
-        contactInfo.email
-      }?subject=Inquiry from ${formData.firstName}&body=${encodeURIComponent(
-        emailBody
-      )}`;
-      setSubmitStatus("success");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        question: "",
+      const response = await fetch(`${apiUrl}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus({ loading: false, success: true, error: null });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          question: "",
+        });
+      } else {
+        // NestJS validation errors come back as result.message (string or array)
+        const errorMsg = Array.isArray(result.message)
+          ? result.message.join(", ")
+          : result.message || "Something went wrong. Please try again.";
+
+        setStatus({ loading: false, success: false, error: errorMsg });
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setStatus({
+        loading: false,
+        success: false,
+        error: "Failed to connect to the server. Please try again later.",
       });
     } catch (error) {
       setSubmitStatus("error");
@@ -101,38 +129,55 @@ const Contact = () => {
           </h1>
         </motion.div>
       </div>
-      <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-20 p-6 md:p-20 bg-[#FFFBF7]">
-        {/* Contact Form */}
-        <motion.div
-          className="w-full md:w-1/2 max-w-[600px] bg-white p-6 md:p-10 rounded-3xl shadow-xl shadow-[#FAB548]/10 border border-[#3C91BA]/20 font-cocon"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
-          <div className="text-[#3C91BA] text-xl md:text-3xl mb-8 font-medium" dangerouslySetInnerHTML={{__html: t("contact.header")}}>
-          </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            <div className="flex flex-col md:flex-row gap-5">
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder={t("contact.form_fn")}
-                required
-                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
-              />
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder={t("contact.form_ln")}
-                className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
-              />
+      <div className="relative w-full max-w-3xl p-4 -top-20">
+        {/* Header */}
+        <div className="w-full h-[150px] rounded-t-[30px] bg-[#FFF1DC]/99 text-center flex items-center justify-center font-cocon text-xl md:text-3xl text-[#1E1E1E]/50">
+          Let's get your details in order for us
+          <br /> to help you
+        </div>
+
+        {/* Form Section */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-[#FFFCF8] border-l-[1.09px] border-r-[1.09px] border-dashed border-[#3C91BA] p-4 md:p-6"
+        >
+          {/* Status Messages */}
+          {status.error && (
+            <div className="mb-6 p-4 bg-red-50 text-red-700 border border-red-200 rounded-lg text-sm font-semibold">
+              ⚠️ {status.error}
+            </div>
+          )}
+          {status.success && (
+            <div className="mb-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg text-sm font-semibold">
+              🎉 Thank you! Your message has been sent. We will get back to you
+              shortly.
             </div>
 
+          {/* Name Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-6 md:mb-10">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First name *"
+              value={formData.firstName}
+              onChange={handleChange}
+              disabled={status.loading}
+              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last name"
+              value={formData.lastName}
+              onChange={handleChange}
+              disabled={status.loading}
+              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
+            />
+          </div>
+
+          {/* Email and Phone Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 mb-6 md:mb-10">
             <input
               type="email"
               name="email"
@@ -145,28 +190,33 @@ const Contact = () => {
 
             <input
               type="tel"
-              name="phone"
-              value={formData.phone}
+              name="phoneNumber" // ← matches backend DTO
+              placeholder="Phone number"
+              value={formData.phoneNumber}
               onChange={handleChange}
               placeholder={t("contact.form_phone")}
               className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400"
             />
+          </div>
 
+          {/* Question Field */}
+          <div>
             <textarea
               name="question"
               value={formData.question}
               onChange={handleChange}
-              placeholder={t("contact.form_q")}
-              required
-              rows="5"
-              className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#FAB548] focus:ring-1 focus:ring-[#FAB548] bg-gray-50 transition-all placeholder:text-gray-400 resize-none"
-            ></textarea>
+              disabled={status.loading}
+              className="border-2 border-dashed border-[#3C91BA] rounded-lg p-3 w-full outline-none focus:border-blue-500"
+            />
+          </div>
 
+          {/* Send Button */}
+          <div className="mt-6">
             <button
               type="submit"
-              disabled={isSubmitting}
-              className={`w-full md:w-[200px] h-14 bg-[#FAB548] text-white rounded-full font-semibold text-lg hover:bg-[#e09e3a] transition-colors duration-300 shadow-md ${
-                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              disabled={status.loading}
+              className={`flex items-center bg-[#FAB548] text-white font-semibold uppercase px-6 py-3 rounded-full shadow-md hover:bg-[#f8a933] transition duration-300 font-cocon ${
+                status.loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
               {isSubmitting ? t("btn.sending") : t("btn.send")}
@@ -244,53 +294,30 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </form>
 
-          <div className="bg-[#FAB548]/10 p-8 rounded-3xl border border-[#FAB548]/20 flex flex-col items-center justify-center gap-4">
-            <h3 className="text-xl font-medium text-[#1E1E1E] mb-2">
-              Follow Us
-            </h3>
-            <div className="flex gap-6">
-              {socials.linkedin && (
-                <a
-                  href={socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-[#0077b5] transition-all text-[#1E1E1E]/70"
-                >
-                  <FaLinkedin size={24} />
-                </a>
-              )}
-              {socials.instagram && (
-                <a
-                  href={socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-[#E1306C] transition-all text-[#1E1E1E]/70"
-                >
-                  <FaInstagram size={24} />
-                </a>
-              )}
-              {socials.facebook && (
-                <a
-                  href={socials.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-[#1877F2] transition-all text-[#1E1E1E]/70"
-                >
-                  <FaFacebook size={24} />
-                </a>
-              )}
-              {socials.tiktok && (
-                <a
-                  href={socials.tiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm hover:shadow-md hover:scale-110 hover:text-black transition-all text-[#1E1E1E]/70"
-                >
-                  <FaTiktok size={24} />
-                </a>
-              )}
-            </div>
+        {/* Contact Info */}
+        <div className="bg-[#FFF1DC]/99 p-4 md:p-6 space-y-6">
+          <p className="text-[#1E1E1E]/50 text-2xl md:text-4xl font-cocon">
+            Contact Information
+          </p>
+          <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
+            <IoLocationSharp size={20} color="#1E1E1E" />
+            <span className="md:text-xl font-regular">
+              Norsken House, Kigali, RW
+            </span>
+          </div>
+          <div className="flex items-center gap-2 font-cocon text-[#1E1E1E]/60">
+            <AiOutlineMail size={20} color="#1E1E1E" />
+            <span className="md:text-xl font-regular">
+              skillseed@wekraft.co
+            </span>
+          </div>
+          <div className="flex items-center gap-2 font-bold text-[#1E1E1E]/60">
+            <FaPhone size={20} color="#1E1E1E" />
+            <span className="md:text-xl font-regular">
+              +250793177089 / +250787161453
+            </span>
           </div>
         </motion.div>
       </div>

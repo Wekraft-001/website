@@ -26,7 +26,7 @@ const Toolkit = () => {
           >
             {t("toolkit.hero_title")}
           </h1>
-          <a
+          {/* <a
             href="#more"
             className="flex items-center justify-center md:justify-start"
           >
@@ -41,7 +41,7 @@ const Toolkit = () => {
                 <IoArrowForwardCircle className="mx-2" />
               </span>
             </motion.button>
-          </a>
+          </a> */}
         </motion.div>
 
         {/* Image Content */}
